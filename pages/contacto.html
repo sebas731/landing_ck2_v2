@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | ComuniK2</title>
+  <meta name="description" content="Contáctanos por WhatsApp, email o el formulario. Estamos de lunes a sábado de 9am a 6pm para ayudarte.">
+  <meta name="theme-color" content="#CC0000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/producto.css">
+  <link rel="icon" href="../images/logo.png">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <header class="page-hero">
+    <div class="container">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes una duda o quieres hacer un pedido? Escríbenos, te respondemos rápido.</p>
+    </div>
+  </header>
+
+  <main class="container contact">
+    <div class="contact__info">
+      <h2>Hablemos</h2>
+      <div class="footer__contact">
+        <div class="help__row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+          <div><strong>WhatsApp</strong>+51 955 372 605</div>
+        </div>
+        <div class="help__row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          <div><strong>Email</strong>contacto@comunik2peru.com</div>
+        </div>
+        <div class="help__row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><strong>Horario</strong>Lun - Sab</div>
+        </div>
+      </div>
+      <a href="https://wa.me/51955372605" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:18px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+
+    <div class="contact__form">
+      <h2>Envíanos un mensaje</h2>
+      <!-- Web3Forms: reemplaza access_key por tu clave de https://web3forms.com -->
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde ComuniK2">
+        <input type="hidden" name="from_name" value="Web ComuniK2">
+        <input type="checkbox" name="botcheck" class="sr-only" style="display:none" aria-hidden="true">
+
+        <div class="form-field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="form-field">
+          <label for="phone">Teléfono / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="+51 999 999 999">
+        </div>
+        <div class="form-field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" required placeholder="¿En qué podemos ayudarte?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-red btn-block">Enviar mensaje</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../js/components.js"></script>
+  <script>
+    // Envío Web3Forms vía fetch (sin recargar)
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.style.color = 'var(--gray-500)';
+        status.textContent = 'Enviando...';
+        var data = new FormData(form);
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res.success) {
+              status.style.color = 'var(--green-wa)';
+              status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ¡Mensaje enviado! Te responderemos pronto.';
+              form.reset();
+            } else {
+              status.style.color = 'var(--red)';
+              status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> ';
+              status.appendChild(document.createTextNode(res.message || 'No se pudo enviar. Inténtalo de nuevo.'));
+            }
+          })
+          .catch(function () {
+            status.style.color = 'var(--red)';
+            status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Error de conexión. Escríbenos por WhatsApp.';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

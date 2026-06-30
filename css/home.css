@@ -1,0 +1,315 @@
+/* ============================================================
+   COMUNIK2 — Estilos de la home (index.html)
+   ============================================================ */
+
+/* ===================== HERO SLIDER ===================== */
+.hero {
+  position: relative;
+  height: clamp(420px, 62vh, 620px);
+  overflow: hidden;
+  background: var(--dark);
+}
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  display: flex;
+  align-items: center;
+}
+.hero__slide.active { opacity: 1; }
+.hero__slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 80%);
+}
+.hero__content {
+  position: relative;
+  max-width: 560px;
+  color: #fff;
+  padding-inline: clamp(20px, 6vw, 80px);
+}
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: var(--red);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 18px;
+}
+.hero__content h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.hero__content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 28px;
+  max-width: 460px;
+}
+.hero__btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Flechas */
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background var(--t);
+}
+.hero__arrow:hover { background: rgba(255,255,255,0.28); }
+.hero__arrow--prev { left: 18px; }
+.hero__arrow--next { right: 18px; }
+
+/* Dots */
+.hero__dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+.hero__dots button {
+  width: 11px; height: 11px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.5);
+  transition: all var(--t);
+}
+.hero__dots button.active { background: #fff; width: 28px; }
+
+/* ===================== TRUST STRIP ===================== */
+.trust {
+  background: #FFF8F8;
+  border-bottom: 2px solid var(--red-light);
+}
+.trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-block: 26px;
+}
+.trust__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.trust__item svg { color: var(--red); flex-shrink: 0; }
+.trust__item div strong { display: block; font-size: 0.92rem; font-weight: 700; }
+.trust__item div span { font-size: 0.78rem; color: var(--gray-500); }
+
+/* ===================== BANNER OFERTA DEL DÍA ===================== */
+.offer {
+  padding-block: 56px;
+}
+.offer__box {
+  background: var(--gray-100);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  min-height: 320px;
+  border: 1px solid var(--border);
+}
+.offer__info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.offer__badge {
+  align-self: flex-start;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 16px;
+}
+.offer__info h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+.offer__price {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+.countdown { display: flex; gap: 10px; margin-bottom: 26px; }
+.countdown__box {
+  background: var(--dark);
+  color: #fff;
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  text-align: center;
+  min-width: 58px;
+}
+.countdown__box b { font-size: 1.5rem; font-weight: 900; display: block; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown__box span { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; }
+.offer__cta { align-self: flex-start; }
+
+.offer__media {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.offer__media img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+/* ===================== PRODUCTOS ===================== */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 8px;
+}
+.pcard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform var(--t), box-shadow var(--t);
+  display: flex;
+  flex-direction: column;
+}
+.pcard:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+.pcard__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--white-100);
+  overflow: hidden;
+}
+.pcard__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transition: opacity 0.45s ease;
+}
+.pcard__media .img-hover { opacity: 0; }
+.pcard:hover .img-hover { opacity: 1; }
+.pcard:hover .img-main { opacity: 0; }
+
+.pcard__discount {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  z-index: 2;
+}
+.pcard__soldout {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.pcard__soldout span {
+  background: var(--white);
+  color: var(--dark);
+  font-weight: 800;
+  padding: 8px 20px;
+  border-radius: var(--r-full);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.pcard__body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.pcard__name { font-size: 1.12rem; font-weight: 800; }
+.pcard__name a:hover { color: var(--red); }
+
+.pcard__colors { display: flex; gap: 8px; }
+.pcard__colors button {
+  width: 22px; height: 22px;
+  border-radius: var(--r-full);
+  border: 2px solid var(--border);
+  transition: border-color var(--t), transform var(--t);
+}
+.pcard__colors button.active { border-color: var(--red); transform: scale(1.12); }
+
+.stars { display: inline-flex; align-items: center; gap: 3px; color: #FFB400; font-size: 0.95rem; }
+.stars span { color: var(--gray-500); font-size: 0.8rem; margin-left: 5px; }
+
+.pcard__price { display: flex; align-items: baseline; gap: 10px; margin-top: auto; }
+.pcard__price .now { font-size: 1.5rem; font-weight: 900; color: var(--red); }
+.pcard__price .was { font-size: 0.95rem; color: var(--gray-500); text-decoration: line-through; }
+
+/* ===================== STATS DARK ===================== */
+.stats {
+  background: var(--dark);
+  color: #fff;
+}
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-block: 56px;
+  text-align: center;
+}
+.stats__item b {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: -0.02em;
+}
+.stats__item span { color: rgba(255,255,255,0.7); font-size: 0.95rem; font-weight: 500; }
+.stats__item:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.12); }
+
+/* ===================== RESPONSIVE HOME ===================== */
+@media (max-width: 900px) {
+  .trust__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .offer__box { grid-template-columns: 1fr; }
+  .offer__media { order: -1; }
+}
+@media (max-width: 700px) {
+  .products__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .trust__grid { grid-template-columns: 1fr 1fr; }
+  .offer__box { min-height: auto; }
+  .offer__info { padding: 28px 22px; }
+  .stats__item:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 18px; }
+  .stats__grid { grid-template-columns: 1fr; }
+}
