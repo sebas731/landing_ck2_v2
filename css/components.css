@@ -98,7 +98,7 @@
 .ticker__track span {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 20px;
 }
 .ticker__track span svg {
   flex-shrink: 0;
@@ -108,6 +108,21 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+/* ===================== TICKER DE EN MEDIO ===================== */
+.ticker-medio {
+
+  background: var(--gray-200);
+  color: var(--black);
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+
+}
+
 
 /* ===================== HEADER ===================== */
 .site-header {

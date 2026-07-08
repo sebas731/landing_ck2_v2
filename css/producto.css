@@ -623,9 +623,40 @@
   .comparison__cols { grid-template-columns: 1fr; }
   .rev-card { flex: 0 1 calc((100% - 20px) / 2); }
 }
+
 @media (max-width: 560px) {
-  .gallery { grid-template-columns: 64px 1fr; }
-  .gallery__thumb { width: 64px; height: 64px; }
+  /* Galería en columna: imagen grande arriba, thumbs en fila abajo */
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    display: grid;
+    gap: 12px;
+  }
+
+  /* Imagen principal primero (arriba) */
+  .gallery__main {
+    grid-row: 1;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  /* Thumbnails en fila horizontal debajo */
+.gallery__thumb {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+.gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
   .blog-grid { grid-template-columns: 1fr; }
   .pinfo__buy { flex-direction: column; }
   .pinfo__trust { grid-template-columns: 1fr; gap: 16px; }
@@ -633,4 +664,54 @@
   .rev-card { flex: 0 1 100%; }
   .form-row { grid-template-columns: 1fr; }
   .reclamo-hero, .reclamo-form { padding: 24px; }
+}
+
+@media (max-width: 560px) {
+  .pinfo__trust {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  .pinfo__trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .pinfo__trust-item svg {
+    width: 22px;
+    height: 22px;
+  }
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+.qty-stepper button {
+  width: 56px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: 600;
+  background: var(--gray-100);
+  color: var(--dark);
+  border: none;
+  cursor: pointer;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.qty-stepper button:hover {
+  background: var(--border);
+}
+.qty-stepper span {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
 }

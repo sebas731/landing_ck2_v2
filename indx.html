@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComuniK2 | Silla Ergonómica Dalas — Envío GRATIS a todo el Perú</title>
+  <meta name="description" content="Silla ergonómica full malla, gris o negro. Packs con descuento. Envío GRATIS a todo el Perú. Garantía 1 año. Paga al recibir en Lima.">
+  <meta name="theme-color" content="#CC0000">
+  <meta property="og:title" content="ComuniK2 | Silla Ergonómica Dalas">
+  <meta property="og:description" content="La silla que tu espalda estaba esperando. Envíos a todo el Perú.">
+  <meta property="og:type" content="product">
+  <meta property="og:image" content="images/productos/gris/prod1-a.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" href="images/logo.png">
+
+  <!-- Estilos propios de la landing vendedora -->
+  <style>
+  .lp{--wa:#25D366;--green:#1a8c4e}
+  .lp img{max-width:100%;display:block}
+  .lp .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .lp .wrap-another{max-width:100%;margin:0;padding:0 5px}
+  .lp .btn-full{width:100%}
+
+  /* contador barra */
+  .lp .countdown-bar{background:var(--dark);color:#fff;text-align:center;padding:12px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;font-weight:600}
+  .lp .cd-boxes{display:flex;gap:6px}
+  .lp .cd-box{background:var(--red);border-radius:8px;padding:5px 10px;min-width:48px;text-align:center}
+  .lp .cd-box b{display:block;font-size:18px;font-weight:900;line-height:1}
+  .lp .cd-box small{font-size:9px;opacity:.8;text-transform:uppercase}
+
+  /* hero */
+  .lp .hero{padding:30px 0}
+  .lp .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .lp .gallery-main{background:#fff;border-radius:16px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative}
+  .lp .gallery-main img{width:100%;height:100%;object-fit:contain;padding:0}
+  .lp .badge-off{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-size:13px;font-weight:800;padding:5px 12px;border-radius:20px}
+  .lp .thumbs{display:flex;gap:10px;overflow-x:auto}
+  .lp .thumb{width:66px;height:66px;border-radius:10px;border:2px solid var(--border);background:#fff;flex-shrink:0;overflow:hidden;cursor:pointer;padding:4px}
+  .lp .thumb.active{border-color:var(--red)}
+  .lp .thumb img{width:100%;height:100%;object-fit:contain}
+
+  .lp .tag{display:inline-block;background:#FFF0F0;color:var(--red);font-size:12px;font-weight:800;padding:5px 14px;border-radius:20px;margin-bottom:12px}
+  .lp h1{font-size:30px;font-weight:900;line-height:1.15;margin-bottom:10px;color:var(--dark)}
+  .lp .stars-row{color:#E88000;font-size:15px;margin-bottom:12px}.lp .stars-row span{color:var(--gray-500);font-size:13px}
+  .lp .price{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+  .lp .price-now{font-size:36px;font-weight:900;color:var(--red)}
+  .lp .price-old{font-size:18px;color:var(--gray-500);text-decoration:line-through}
+  .lp .cuotas{font-size:13px;color:var(--gray-500);margin-bottom:16px}
+
+  /* stock */
+  .lp .stock-live{background:#FFF7E6;border:1px solid #FFE0A3;border-radius:10px;padding:10px 14px;margin-bottom:16px}
+  .lp .st-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px}
+  .lp .st-top b{color:var(--red)}
+  .lp .st-bar{height:7px;background:#FFE0A3;border-radius:20px;overflow:hidden}
+  .lp .st-fill{height:100%;background:linear-gradient(90deg,#ff9500,var(--red));border-radius:20px;transition:width .5s}
+
+  /* packs */
+  .lp .packs{margin-bottom:18px}
+  .lp .packs-h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;margin-bottom:10px}
+  .lp .packs-h .oblig{background:var(--red);color:#fff;font-size:10px;padding:3px 9px;border-radius:20px}
+  .lp .pack{border:2px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:.15s;position:relative}
+  .lp .pack:hover{border-color:#ccc}
+  .lp .pack.active{border-color:var(--red);background:#FFF0F0}
+  .lp .pack-top{display:flex;justify-content:space-between;align-items:center}
+  .lp .pack-name{font-size:15px;font-weight:800}
+  .lp .pack-save{font-size:12px;color:var(--green);font-weight:700}
+  .lp .pack-price{font-size:17px;font-weight:900}
+  .lp .pack-old{font-size:13px;color:var(--gray-500);text-decoration:line-through;margin-left:6px}
+  .lp .pack-badge{position:absolute;top:-9px;right:14px;background:var(--red);color:#fff;font-size:10px;font-weight:800;padding:2px 10px;border-radius:20px}
+  .lp .pack-mini-cd{display:flex;align-items:center;gap:6px;margin-top:8px;background:var(--dark);color:#fff;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;width:fit-content}
+  .lp .pack-mini-cd b{color:#ffd280}
+
+  /* combo colores */
+  .lp .combo{margin-bottom:18px}
+  .lp .combo h4{font-size:13px;font-weight:700;margin-bottom:10px}
+  .lp .combo-unit{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .lp .combo-unit>span{font-size:13px;font-weight:600;min-width:70px}
+  .lp .combo-opts{display:flex;gap:8px}
+  .lp .co{display:flex;align-items:center;gap:6px;border:2px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600}
+  .lp .co.active{border-color:var(--red);background:#FFF0F0}
+  .lp .dot{width:16px;height:16px;border-radius:50%;border:1px solid #ccc}
+
+  .lp .bullets{list-style:none;margin-bottom:16px}
+  .lp .bullets li{padding:4px 0 4px 26px;position:relative;font-size:14px}
+  .lp .bullets li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}
+
+  .lp .free-ship{display:flex;align-items:center;gap:8px;background:#E8F8EE;color:var(--green);font-size:13px;font-weight:700;padding:10px 14px;border-radius:10px;margin:14px 0}
+  .lp .instock{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--green);font-weight:600}
+  .lp .instock i{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block}
+
+  .lp .sec{padding:52px 0}
+  .lp .sec-t{text-align:center;font-size:28px;font-weight:900;margin-bottom:8px;color:var(--dark)}
+  .lp .sec-s{text-align:center;color:var(--gray-500);margin-bottom:34px;font-size:15px}
+
+  .lp .benes{
+            display:grid;
+            grid-template-columns:3.3fr 3.3fr 3.3fr;
+            gap:10px;
+          }
+  .lp .bene{background:var(--gray-100);border-radius:0px;overflow:hidden}
+  .lp .bene-img{aspect-ratio:1;background:#e5e5e5;display:flex;align-items:center;justify-content:center;color:#999;font-size:13px}
+  .lp .bene-img img{width:100%;height:100%;object-fit:cover}
+
+
+  .lp .cmp{background:var(--dark);color:#fff;border-radius:16px;overflow:hidden}
+  .lp .cmp-row{display:grid;grid-template-columns:1fr 1fr;text-align:center}
+  .lp .cmp-h{padding:16px;font-weight:800;font-size:15px}
+  .lp .cmp-h.us{background:var(--red)}.lp .cmp-h.them{background:#333}
+  .lp .cmp-i{padding:12px 16px;font-size:13.5px;border-top:1px solid rgba(255,255,255,.08)}
+  .lp .cmp-i.us{background:rgba(204,0,0,.12)}
+
+  .lp .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .lp .rev{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px}
+  .lp .rev .rs{color:#E88000;font-size:14px;margin-bottom:8px}
+  .lp .rev p{font-size:13.5px;margin-bottom:12px}
+  .lp .rev-a{font-size:12px;color:var(--gray-500);font-weight:600}
+  .lp .rev-v{font-size:11px;color:var(--green);font-weight:600;margin-top:2px}
+
+  .lp .faq details{border-bottom:1px solid var(--border);padding:16px 0}
+  .lp .faq summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+  .lp .faq summary::after{content:"+";color:var(--red);font-weight:900}
+  .lp .faq details[open] summary::after{content:"−"}
+  .lp .faq p{font-size:14px;color:var(--gray-500);padding-top:10px}
+
+  .lp .final{background:var(--gray-100);border-radius:16px;padding:40px 28px;text-align:center}
+  .lp .final h2{font-size:26px;font-weight:900;margin-bottom:10px}
+  .lp .trust3{display:flex;justify-content:center;gap:24px;margin-top:18px;font-size:12px;color:var(--gray-500);flex-wrap:wrap}
+
+  /* sticker garantía */
+  .lp-guarantee{position:fixed;top:150px;right:16px;width:92px;height:92px;background:var(--red);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 4px 16px rgba(204,0,0,.4);z-index:40;transform:rotate(-8deg);animation:lpwob 3s ease-in-out infinite}
+  @keyframes lpwob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(4deg)}}
+  .lp-guarantee b{font-size:18px;font-weight:900;line-height:1}
+  .lp-guarantee span{font-size:8px;font-weight:700;text-transform:uppercase}
+
+  /* contador lateral */
+  .lp-sidecd{position:fixed;bottom:96px;right:24px;background:var(--dark);color:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:45;text-align:center;display:none}
+  .lp-sidecd.show{display:block}
+  .lp-sidecd p{font-size:10px;font-weight:700;text-transform:uppercase;margin-bottom:6px;color:#ff8080}
+  .lp-sidecd .b{display:flex;gap:4px;justify-content:center}
+  .lp-sidecd .b div{background:var(--red);border-radius:6px;padding:4px 7px;min-width:34px}
+  .lp-sidecd .b b{display:block;font-size:15px;font-weight:900;line-height:1}
+  .lp-sidecd .b small{font-size:7px;opacity:.85}
+
+  /* sticky bar móvil */
+  .lp-sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.1);padding:10px 14px;display:none;align-items:center;gap:12px;z-index:65}
+  .lp-sticky .sp-price{font-size:19px;font-weight:900;color:var(--red);line-height:1}
+  .lp-sticky .sp-lbl{font-size:10px;color:var(--gray-500);font-weight:600}
+  .lp-sticky .btn{flex:1}
+
+  /* cupón */
+  .lp-coupon-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+  .lp-coupon-ov.open{display:flex}
+  .lp-coupon{background:#fff;border-radius:20px;max-width:400px;width:100%;overflow:hidden;position:relative;animation:lppop .35s}
+  @keyframes lppop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  .lp-coupon-x{position:absolute;top:12px;right:14px;background:rgba(0,0,0,.1);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;z-index:2}
+  .lp-coupon-top{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:32px 24px 24px;text-align:center}
+  .lp-coupon-top .big{font-size:52px;font-weight:900;line-height:1}
+  .lp-coupon-top p{font-size:14px;opacity:.9;margin-top:4px}
+  .lp-coupon-code{background:#fff;border:2px dashed var(--red);color:var(--red);font-weight:900;font-size:20px;letter-spacing:.1em;padding:12px;border-radius:10px;margin:16px 24px;text-align:center}
+  .lp-coupon-body{padding:0 24px 24px;text-align:center}
+  .lp-coupon-body h3{font-size:20px;font-weight:900;margin-bottom:6px}
+  .lp-coupon-body p{font-size:13px;color:var(--gray-500);margin-bottom:16px}
+
+  /* toast compras */
+  .lp-toast{position:fixed;bottom:20px;left:20px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.14);padding:12px 14px;display:flex;gap:12px;align-items:center;max-width:320px;z-index:70;transform:translateX(-120%);transition:transform .4s;opacity:0}
+  .lp-toast.show{transform:translateX(0);opacity:1}
+  .lp-toast-img{width:44px;height:44px;border-radius:8px;background:var(--gray-100);flex-shrink:0;overflow:hidden}
+  .lp-toast-img img{width:100%;height:100%;object-fit:contain;padding:3px}
+  .lp-toast-txt b{font-size:13px;display:block}
+  .lp-toast-txt span{font-size:11px;color:var(--gray-500)}
+  .lp-toast-txt .vf{color:var(--green);font-weight:600}
+
+  @media(max-width:800px){
+    .lp .hero-grid{grid-template-columns:1fr}
+    .lp .benes,.lp .revs{grid-template-columns:1fr}
+    .lp h1{font-size:24px}
+    .lp .rev:nth-child(n+3){display:none}
+    .lp-guarantee{width:74px;height:74px;top:120px;right:10px}
+    .lp-guarantee b{font-size:15px}
+    .lp-sticky{display:flex}
+    .lp-sidecd{display:none!important}
+    .wa-float{bottom:82px!important}
+    body{padding-bottom:70px}
+    .lp-toast{left:12px;right:12px;max-width:none}
+  }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main class="lp">
+
+    <!-- CONTADOR -->
+    <div class="countdown-bar">
+      <div class="cd-boxes">
+        <div class="cd-box"><b id="cd-h">08</b><small>Horas</small></div>
+        <div class="cd-box"><b id="cd-m">00</b><small>Min</small></div>
+        <div class="cd-box"><b id="cd-s">00</b><small>Seg</small></div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero"><div class="wrap"><div class="hero-grid">
+      <div>
+        <div class="gallery-main"><span class="badge-off">-14%</span><img id="mainImg" src="images/productos/gris/prod1-a.jpeg" onerror="this.src='https://via.placeholder.com/500/F5F5F5/CCC?text=Foto'"></div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div>
+        <span class="tag"> ★ MÁS VENDIDA 2026</span>
+        <div class="stars-row">★★★★★ <span>(4.9 · +450 reseñas)</span></div>
+        <h1>Silla Ergonómica Full Malla — Dalas</h1>
+        <div class="price"><span class="price-now">S/. 599</span><span class="price-old">S/. 700</span></div>
+       
+
+
+        <div class="packs">
+          <div class="packs-h">Escoge tu pack <span class="oblig">Obligatorio</span></div>
+          <div class="pack active" data-pack="1" onclick="LP.selectPack(1)">
+            <div class="pack-top"><div class="pack-name">1 silla</div><div class="pack-price">S/. 599</div></div>
+          </div>
+          <div class="pack" data-pack="2" onclick="LP.selectPack(2)">
+            <span class="pack-badge">MÁS ELEGIDO</span>
+            <div class="pack-top"><div><div class="pack-name">Pack 2 sillas</div><div class="pack-save">Ahorra S/. 99</div></div><div><span class="pack-price">S/. 1,099</span><span class="pack-old">S/. 1,198</span></div></div>
+          </div>
+          <div class="pack" data-pack="3" onclick="LP.selectPack(3)">
+            <div class="pack-top"><div><div class="pack-name">Pack 3 sillas</div><div class="pack-save">Ahorra S/. 198</div></div><div><span class="pack-price">S/. 1,599</span><span class="pack-old">S/. 1,797</span></div></div>
+            <div class="pack-mini-cd">🔥 ¡Solo por hoy! Termina en <b id="pack3cd">15:00</b></div>
+          </div>
+        </div>
+
+        <div class="combo">
+          <h4>Elige el color de cada silla:</h4>
+          <div id="comboUnits"></div>
+        </div>
+
+        <button class="btn btn-dark btn-full" style="margin-bottom:10px" onclick="LP.addCart()">Añadir al carrito</button>
+        <a class="btn btn-wa btn-full" id="waBtn" href="#" target="_blank">Comprar por WhatsApp</a>
+        <div class="free-ship"> Envío GRATIS a todo el Perú en esta compra</div>
+        <div class="instock"><i></i> Listo para enviar hoy</div>
+      </div>
+    </div></div></section>
+
+    <!-- tiker del medio-->
+    <div class="ticker-medio">
+        <div class="ticker__track">
+          <span> ENVIO GRATIS </span>
+          <span> GARANTIA DE 1 AÑO </span>
+          <span> COMPRA RAPIDA  </span>
+          <span> APROVECHA LAS OFERTAS </span>
+          <span> ENVIO GRATIS A TODO EL PERU</span>
+        </div>
+    </div>
+
+    <!-- BENEFICIOS -->
+    <section class="sec"><div class="wrap-another">
+      <h2 class="sec-t"><b> SILLA ERGONOMICA DALAS FULL MALLA</b></h2>
+      <p class="sec-s">Modelo de la colección ergonómica avanzada que integra un respaldo y asiento en malla técnica  </p>
+
+
+      <div class="benes">
+        <div class="bene"><div class="bene-img"><img src="images/productos/gris/sila-negra.gif" onerror="this.parentElement.innerHTML='Foto: malla transpirable'"></div></div>
+        <div class="bene"><div class="bene-img"><img src="images/productos/gris/prod1-b.jpeg" onerror="this.parentElement.innerHTML='Foto: soporte lumbar'"></div></div>
+        <div class="bene"><div class="bene-img"><img src="images/productos/gris/use_silla.jpg" onerror="this.parentElement.innerHTML='Foto: puntos de ajuste'"></div></div>
+      </div>
+    </div></section>
+
+    <!-- COMPARATIVA -->
+    <section class="sec" style="background:var(--gray-100)"><div class="wrap">
+      <h2 class="sec-t">Dalas vs una silla común</h2><p class="sec-s">La diferencia se siente desde el primer día</p>
+      <div class="cmp">
+        <div class="cmp-row"><div class="cmp-h us">Silla Dalas</div><div class="cmp-h them">Silla común</div></div>
+        <div class="cmp-row"><div class="cmp-i us">✓ Soporte lumbar ajustable</div><div class="cmp-i">✗ Soporte fijo</div></div>
+        <div class="cmp-row"><div class="cmp-i us">✓ Malla transpirable</div><div class="cmp-i">✗ Esponja que da calor</div></div>
+        <div class="cmp-row"><div class="cmp-i us">✓ Base de aluminio · 120 kg</div><div class="cmp-i">✗ Base plástica</div></div>
+        <div class="cmp-row"><div class="cmp-i us">✓ Garantía 1 año</div><div class="cmp-i">✗ Sin garantía</div></div>
+      </div>
+    </div></section>
+
+    <!-- RESEÑAS -->
+    <section class="sec"><div class="wrap">
+      <h2 class="sec-t">Lo que dicen los clientes</h2><p class="sec-s">Reseñas verificadas de Mercado Libre</p>
+      <div class="revs">
+        <div class="rev"><div class="rs">★★★★★</div><p>"Excelente silla, la prefiero mil veces sobre las gamer. El soporte lumbar es muy bueno. ¡Recomendadísimo!"</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
+        <div class="rev"><div class="rs">★★★★★</div><p>"Muy buena silla. El asiento en malla y el respaldar garantiza máxima frescura."</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
+        <div class="rev"><div class="rs">★★★★★</div><p>"Excelente producto, me ayudó a reducir dolores de espalda."</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
+      </div>
+    </div></section>
+
+    <!-- FAQ -->
+    <section class="sec" style="background:var(--gray-100)"><div class="wrap" style="max-width:700px">
+      <h2 class="sec-t">Preguntas frecuentes</h2>
+      <div class="faq" style="margin-top:28px">
+        <details><summary>¿El envío es realmente gratis?</summary><p>Sí, delivery gratuito a todo el Perú. Coordinamos por WhatsApp.</p></details>
+        <details><summary>¿Puedo pedir el pack con colores distintos?</summary><p>¡Claro! En los packs de 2 o 3 eliges el color de cada silla (gris o negro) como prefieras.</p></details>
+        <details><summary>¿Cuánto peso soporta?</summary><p>Hasta 120 kg gracias a su base de aluminio de 5 puntas.</p></details>
+        <details><summary>¿Qué medios de pago aceptan?</summary><p>Yape, Plin, transferencia y pago al recibir en Lima.</p></details>
+        <details><summary>¿Tiene garantía?</summary><p>Sí, 1 año de garantía contra defectos de fábrica.</p></details>
+      </div>
+    </div>
+  </section>
+
+    <!-- CTA FINAL -->
+    <section class="sec"><div class="wrap">
+      <div class="final">
+        <h2>¿Listo para trabajar sin dolor?</h2>
+        <div class="free-ship" style="max-width:340px;margin:12px auto;justify-content:center">🎁 Lleva 2 y ahorra + envío GRATIS</div>
+        <a class="btn btn-wa" id="waBtn2" href="#" target="_blank" style="max-width:360px;margin:0 auto">Comprar por WhatsApp</a>
+        <div class="trust3"><span>✓ Envío gratis Perú</span><span>✓ Garantía 1 año</span><span>✓ Facilidades de pago</span></div>
+      </div>
+    </div></section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- STICKER GARANTÍA -->
+  <div class="lp-guarantee">
+    <b>1 AÑO</b><span>Garantía</span>
+  </div>
+
+  <!-- CONTADOR LATERAL -->
+  <div class="lp-sidecd" id="sideCd">
+    <p>🔥 Termina en</p>
+    <div class="b"><div><b id="scd-h">08</b><small>H</small></div><div><b id="scd-m">00</b><small>M</small></div><div><b id="scd-s">00</b><small>S</small></div></div>
+  </div>
+
+  <!-- STICKY BAR MÓVIL -->
+  <div class="lp-sticky">
+    <div><div class="sp-price" id="spPrice">S/. 599</div><div class="sp-lbl" id="spLbl">1 silla · envío gratis</div></div>
+    <button class="btn btn-wa" onclick="LP.stickyBuy()">Pedir</button>
+  </div>
+
+  <!-- CUPÓN -->
+  <div class="lp-coupon-ov" id="couponOv">
+    <div class="lp-coupon">
+      <button class="lp-coupon-x" onclick="LP.closeCoupon()">✕</button>
+      <div class="lp-coupon-top"><div class="big">S/ 30</div><p>de descuento en tu primera compra</p></div>
+      <div class="lp-coupon-code">DALAS30</div>
+      <div class="lp-coupon-body">
+        <h3>¡Bienvenido a ComuniK2!</h3>
+        <p>Reclama tu cupón ahora por WhatsApp antes de que expire.</p>
+        <a class="btn btn-wa btn-full" href="https://wa.me/51955372605?text=Hola,%20quiero%20reclamar%20mi%20cup%C3%B3n%20*DALAS30*%20de%20S%2F30%20de%20descuento%20en%20la%20Silla%20Dalas" target="_blank" onclick="LP.closeCoupon()">Reclamar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- components: header, footer, carrito, WhatsApp -->
+  <script src="js/components.js"></script>
+
+  <!-- Lógica de la landing -->
+  <script>
+  var LP=(function(){
+    var WA='51955372605';
+    var PACK_PRICE={1:599,2:1099,3:1599};
+    var imgs={
+      gris:['images/productos/gris/prod1-a.jpeg','images/productos/gris/prod1-b.png','images/productos/gris/prod1-c.png','images/productos/gris/prod1-g.png'],
+      negro:['images/productos/negro/prod2-b.jpg','images/productos/negro/prod2-g.png','images/productos/negro/prod2-f.png','images/productos/negro/parte_trasera.png']
+    };
+    var pack=1, colors=['gris'];
+    var cart=JSON.parse(localStorage.getItem('ck-lp-cart')||'[]');
+    function ph(){return 'https://via.placeholder.com/500/F5F5F5/CCC?text=Foto'}
+
+    function renderThumbs(){
+      var t=document.getElementById('thumbs');t.innerHTML='';
+      imgs[colors[0]].forEach(function(src,i){
+        var d=document.createElement('div');d.className='thumb'+(i===0?' active':'');
+        d.innerHTML='<img src="'+src+'" onerror="this.src=\''+ph()+'\'">';
+        d.onclick=function(){document.getElementById('mainImg').src=src;document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('active')});d.classList.add('active')};
+        t.appendChild(d);
+      });
+      var mi=document.getElementById('mainImg');mi.src=imgs[colors[0]][0];mi.onerror=function(){this.src=ph()};
+    }
+    function selectPack(n){
+      pack=n;
+      document.querySelectorAll('.pack').forEach(function(p){p.classList.toggle('active',+p.dataset.pack===n)});
+      colors=[];for(var i=0;i<n;i++)colors.push('gris');
+      renderCombo();renderThumbs();updateWa();
+    }
+    function renderCombo(){
+      var c=document.getElementById('comboUnits');c.innerHTML='';
+      for(var i=0;i<pack;i++){
+        var row=document.createElement('div');row.className='combo-unit';
+        row.innerHTML='<span>Silla '+(i+1)+':</span><div class="combo-opts">'+
+          '<div class="co'+(colors[i]==='gris'?' active':'')+'" data-i="'+i+'" data-c="gris"><span class="dot" style="background:#C8C8C8"></span>Gris</div>'+
+          '<div class="co'+(colors[i]==='negro'?' active':'')+'" data-i="'+i+'" data-c="negro"><span class="dot" style="background:#1A1A1A"></span>Negro</div></div>';
+        c.appendChild(row);
+      }
+      c.querySelectorAll('.co').forEach(function(o){
+        o.onclick=function(){
+          var i=+o.dataset.i;colors[i]=o.dataset.c;
+          o.parentElement.querySelectorAll('.co').forEach(function(x){x.classList.remove('active')});
+          o.classList.add('active');
+          if(i===0)renderThumbs();updateWa();
+        };
+      });
+    }
+    function packLabel(){
+      var g=0,n=0;colors.forEach(function(c){c==='gris'?g++:n++});
+      var p=[];if(g)p.push(g+' Gris');if(n)p.push(n+' Negro');return p.join(' + ');
+    }
+    function updateWa(){
+      var msg='Hola, quiero el *Pack '+pack+' silla'+(pack>1?'s':'')+' Dalas*\nColores: '+packLabel()+'\nPrecio: S/. '+PACK_PRICE[pack]+'\n\n¿Tienen stock? Vi el envío gratis 🙌';
+      var url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+      document.getElementById('waBtn').href=url;
+      document.getElementById('waBtn2').href=url;
+      var spP=document.getElementById('spPrice'),spL=document.getElementById('spLbl');
+      if(!cart.length){spP.textContent='S/. '+PACK_PRICE[pack].toLocaleString();spL.textContent=pack+' silla'+(pack>1?'s':'')+' · envío gratis';}
+    }
+
+    /* ---- carrito: usa el sidebar #ck-cart de components.js ---- */
+    function save(){localStorage.setItem('ck-lp-cart',JSON.stringify(cart))}
+    function addCart(){
+      cart.push({pack:pack,colors:colors.slice(),price:PACK_PRICE[pack],label:packLabel()});
+      save();renderCart();openCart();
+    }
+    function renderCart(){
+      var items=document.getElementById('cart-items');
+      var foot=document.getElementById('cart-foot');
+      var countEls=document.querySelectorAll('.cart-count');
+      if(!items)return;
+      countEls.forEach(function(c){c.textContent=cart.length});
+      if(!cart.length){
+        items.innerHTML='<div class="cart__empty">Tu carrito está vacío</div>';
+        if(foot)foot.style.display='none';
+        var spP=document.getElementById('spPrice');if(spP){updateWa();}
+        return;
+      }
+      items.innerHTML='';var total=0;
+      cart.forEach(function(it,ix){
+        total+=it.price;
+        var img=imgs[it.colors[0]][0];
+        items.innerHTML+='<div class="cart-item">'+
+          '<img class="cart-item__img" src="'+img+'" onerror="this.src=\''+ph()+'\'">'+
+          '<div><div class="cart-item__name">Pack '+it.pack+' silla'+(it.pack>1?'s':'')+' Dalas</div>'+
+          '<div class="cart-item__color">'+it.label+'</div>'+
+          '<div class="cart-item__price">S/. '+it.price+'</div></div>'+
+          '<button class="cart-item__remove" onclick="LP.rm('+ix+')">'+
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>'+
+          '</button></div>';
+      });
+      var totalEl=document.getElementById('cart-total');if(totalEl)totalEl.textContent='S/. '+total.toLocaleString();
+      if(foot)foot.style.display='block';
+      var spP=document.getElementById('spPrice'),spL=document.getElementById('spLbl');
+      if(spP){spP.textContent='S/. '+total.toLocaleString();spL.textContent=cart.length+' en carrito · toca para ver';}
+    }
+    function rm(i){cart.splice(i,1);save();renderCart()}
+    function openCart(){
+      var c=document.getElementById('ck-cart'),o=document.getElementById('ck-overlay');
+      if(c)c.classList.add('open');if(o)o.classList.add('open');
+    }
+    function checkout(){
+      if(!cart.length)return;
+      var msg='*NUEVO PEDIDO - ComuniK2*\n━━━━━━━━━━━━━\n';var total=0;
+      cart.forEach(function(i){total+=i.price;msg+='• Pack '+i.pack+' silla'+(i.pack>1?'s':'')+' ('+i.label+') — S/. '+i.price+'\n'});
+      msg+='━━━━━━━━━━━━━\n*TOTAL: S/. '+total+'*\nCon envío GRATIS 🚚\n\n¿Confirmamos el pedido?';
+      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+    }
+    function stickyBuy(){
+      if(cart.length){openCart();}
+      else{window.open(document.getElementById('waBtn').href,'_blank');}
+    }
+
+    /* cupón / contadores / stock / toast */
+    function closeCoupon(){document.getElementById('couponOv').classList.remove('open')}
+    function tick(){
+      var end=new Date();end.setHours(23,59,59);
+      var d=Math.max(0,end-new Date());
+      var h=('0'+Math.floor(d/3.6e6)).slice(-2),m=('0'+Math.floor(d%3.6e6/6e4)).slice(-2),s=('0'+Math.floor(d%6e4/1000)).slice(-2);
+      ['cd-h','scd-h'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=h});
+      ['cd-m','scd-m'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=m});
+      ['cd-s','scd-s'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=s});
+    }
+    var p3end=Date.now()+15*60*1000;
+    function tickP3(){
+      var d=Math.max(0,p3end-Date.now());
+      var m=Math.floor(d/6e4),s=Math.floor(d%6e4/1000);
+      var e=document.getElementById('pack3cd');if(e)e.textContent=('0'+m).slice(-2)+':'+('0'+s).slice(-2);
+    }
+    var stock=7;
+    function tickStock(){if(stock>3&&Math.random()>.6){stock--;var n=document.getElementById('stockN');if(n)n.textContent=stock;var f=document.getElementById('stFill');if(f)f.style.width=(stock/20*100)+'%';}}
+    var names=['Carlos M.','María de Lima','José R.','Ana P.','Luis Trujillo','Rosa de Arequipa','Pedro G.','Carmen L.','Miguel S.','Diana Cusco'];
+    var acts=['acaba de comprar','compró hace 2 min','pidió por WhatsApp','reservó su silla'];
+    function showToast(){
+      var t=document.getElementById('toast');if(!t)return;
+      document.getElementById('toastName').textContent=names[Math.floor(Math.random()*names.length)];
+      document.getElementById('toastAction').textContent=acts[Math.floor(Math.random()*acts.length)]+' la Silla Dalas';
+      document.getElementById('toastImg').src=imgs[Math.random()>.5?'gris':'negro'][0];
+      t.classList.add('show');setTimeout(function(){t.classList.remove('show')},4500);
+    }
+
+    function init(){
+      // conectar botón "Pedir por WhatsApp" del carrito de components.js
+      var chk=document.getElementById('ck-checkout');
+      if(chk)chk.addEventListener('click',checkout);
+      selectPack(1);renderCart();
+      setInterval(tick,1000);tick();
+      setInterval(tickP3,1000);tickP3();
+      setInterval(tickStock,15000);
+      setTimeout(function(){document.getElementById('couponOv').classList.add('open')},2500);
+      setTimeout(function(){showToast();setInterval(showToast,12000)},6000);
+      window.addEventListener('scroll',function(){
+        document.getElementById('sideCd').classList.toggle('show',window.scrollY>500);
+      });
+    }
+    // components.js inyecta el carrito async; esperamos a que exista #ck-cart
+    var wait=setInterval(function(){
+      if(document.getElementById('ck-cart')){clearInterval(wait);init();}
+    },100);
+
+    return {selectPack:selectPack,addCart:addCart,rm:rm,stickyBuy:stickyBuy,closeCoupon:closeCoupon};
+  })();
+  </script>
+</body>
+</html>

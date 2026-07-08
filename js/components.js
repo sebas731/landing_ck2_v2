@@ -30,7 +30,6 @@
 
           '<nav class="main-nav"><ul>' +
             '<li><a href="' + p('index.html') + '">Inicio</a></li>' +
-            '<li><a href="' + p('index.html') + '#productos">Productos</a></li>' +
             '<li><a href="' + p('index.html') + '#productos">Ofertas <span class="badge-hot">Hot</span></a></li>' +
             '<li><a href="' + p('pages/nosotros.html') + '">Nosotros</a></li>' +
             '<li><a href="' + p('pages/contacto.html') + '">Contacto</a></li>' +
