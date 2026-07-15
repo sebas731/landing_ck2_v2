@@ -1755,6 +1755,20 @@
     }
     .cart-coupon__x:hover { opacity: 1; }
     .cart-coupon__x svg { width: 16px; height: 16px; }
+
+    /* Banner superior (imagen PNG tal cual, clic abre carrito) */
+    .lp-topbanner {
+      margin-top: 12px;
+      cursor: pointer;
+      line-height: 0;
+    }
+    .lp-topbanner__img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity .2s;
+    }
+    .lp-topbanner__img:hover { opacity: .92; }
   </style>
 </head>
 
@@ -1763,6 +1777,13 @@
   <div id="site-header"></div>
 
   <main class="lp">
+
+    <!-- BANNER SUPERIOR (clic abre el carrito) -->
+    <div class="lp-topbanner wrap">
+      <img src="images/banners/banner23.png" alt="Promoción ComuniK2" class="lp-topbanner__img"
+        onclick="document.getElementById('ck-cart').classList.add('open');document.getElementById('ck-overlay').classList.add('open')"
+        onerror="this.closest('.lp-topbanner').style.display='none'">
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -1796,8 +1817,8 @@
                   <p>Transpirable, fresca todo el día</p>
                 </div>
               </div>
-              <div class="fg-card fg-video" onclick="LP.openVideo('video/sila-negra.gif')">
-                <img src="images/productos/gris/sila-negra.gif" onerror="this.style.display='none'">
+              <div class="fg-card fg-video" onclick="LP.openVideo('video/producto2.mp4')">
+                <img src="images/productos/gris/prod1-a.jpeg" onerror="this.style.display='none'">
                 <div class="fg-play"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
               </div>
               <div class="fg-card fg-big">
@@ -2184,7 +2205,7 @@
   <!-- Lógica de la landing -->
   <script>
       var LP = (function () {
-      var WA = '51985693172';
+      var WA = '51985693162';
       var PACK_PRICE = { 1: 599, 2: 1099, 3: 1599 };
       var imgs = {
         gris: ['images/productos/gris/prod1-a.jpeg', 'images/productos/gris/prod1-b.png', 'images/productos/gris/prod1-e.png', 'images/productos/gris/prod1-d.jpeg'],
