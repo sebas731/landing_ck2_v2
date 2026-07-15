@@ -7,7 +7,7 @@
   'use strict';
 
   var ROOT = location.pathname.indexOf('/pages/') !== -1 ? '../' : '';
-  var WA = '51955372605';
+  var WA = '51985693172';
 
   function p(path) { return ROOT + path; }
 
@@ -26,7 +26,7 @@
             svg('<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>') +
           '</button>' +
 
-          '<a href="' + p('index.html') + '" class="logo">Comuni<b>K2</b></a>' +
+          '<a href="' + p('index.html') + '" class="logo"><img src="' + p('images/logo_sientate.png') + '" alt="ComuniK2" class="logo-img" onerror="this.style.display=\'none\'"></a>' +
 
           '<nav class="main-nav"><ul>' +
             '<li><a href="' + p('index.html') + '">Inicio</a></li>' +
@@ -60,7 +60,7 @@
       // Drawer móvil
       '<nav class="mobile-nav" id="ck-mobile-nav">' +
         '<div class="mobile-nav__head">' +
-          '<span class="logo">Comuni<b>K2</b></span>' +
+          '<a href="' + p('index.html') + '" class="logo"><img src="' + p('images/logo_sientate.png') + '" alt="ComuniK2" class="logo-img" onerror="this.style.display=\'none\'"></a>' +
           '<button class="cart__close" id="ck-mobile-close" aria-label="Cerrar menú">' + closeIcon() + '</button>' +
         '</div>' +
         '<a href="' + p('index.html') + '">Inicio ' + chev() + '</a>' +
@@ -110,10 +110,10 @@ function tickerItems() {
         '<div class="container footer__grid">' +
 
           '<div class="footer__brand">' +
-            '<a href="' + p('index.html') + '" class="logo">Comuni<b>K2</b></a>' +
+            '<a href="' + p('index.html') + '" class="logo"><img src="' + p('images/logo_sientate.png') + '" alt="ComuniK2" class="logo-img" onerror="this.style.display=\'none\'"></a>' +
             '<div class="footer__contact">' +
               helpRow(waIcon(16, 'var(--green-wa)'), 'WhatsApp', '+51 955 372 605') +
-              helpRow(svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>', 16, 'var(--red)'), 'Teléfono', '+51 +51 955 372 605') +
+              helpRow(svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>', 16, 'var(--red)'), 'Teléfono', '+51 955 372 605') +
               helpRow(svg('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', 16, 'var(--gray-900)'), 'Horario', 'Lun - Sab') +
               helpRow(svg('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/>', 16, 'var(--gray-900)'), 'Email', 'contacto@comunik2peru.com') +
             '</div>' +
@@ -144,13 +144,11 @@ function tickerItems() {
           '<div class="footer__col">' +
             '<h4>Síguenos</h4>' +
             '<div class="socials">' +
-              '<a href="https://facebook.com" target="_blank" rel="noopener" class="s-fb" aria-label="Facebook">' +
+              '<a href="https://www.facebook.com/people/Si%C3%A9ntate-PE/61591552361331/" target="_blank" rel="noopener" class="s-fb" aria-label="Facebook">' +
                 svg('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>', 20, '#fff') + '</a>' +
-              '<a href="https://instagram.com" target="_blank" rel="noopener" class="s-ig" aria-label="Instagram">' +
+              '<a href="https://www.instagram.com/sientatepe/" target="_blank" rel="noopener" class="s-ig" aria-label="Instagram">' +
                 svg('<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>', 20, '#fff') + '</a>' +
-              '<a href="https://youtube.com" target="_blank" rel="noopener" class="s-yt" aria-label="YouTube">' +
-                '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M23 12s0-3.4-.4-5a2.6 2.6 0 0 0-1.8-1.8C19 4.8 12 4.8 12 4.8s-7 0-8.8.4A2.6 2.6 0 0 0 1.4 7C1 8.6 1 12 1 12s0 3.4.4 5a2.6 2.6 0 0 0 1.8 1.8c1.8.4 8.8.4 8.8.4s7 0 8.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>' +
-              '<a href="https://tiktok.com" target="_blank" rel="noopener" class="s-tk" aria-label="TikTok">' +
+              '<a href="https://www.tiktok.com/@sientateperu?_r=1&_t=ZS-980fOW7aRO9" target="_blank" rel="noopener" class="s-tk" aria-label="TikTok">' +
                 '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M16 2c.3 2.3 1.6 3.9 3.8 4.2v3c-1.4.1-2.7-.3-3.8-1v6.7c0 4-3.5 6.6-7 5.3-2.4-.9-3.4-3.6-2.6-6 .7-2 2.6-3.2 4.7-3v3.1c-.4-.1-.8-.1-1.2 0-1 .3-1.6 1.3-1.3 2.3.3 1.2 1.9 1.6 2.9.7.5-.4.7-1 .7-1.7V2z"/></svg></a>' +
             '</div>' +
           '</div>' +

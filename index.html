@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ComuniK2 | Silla Ergonómica Dalas — Envío GRATIS a todo el Perú</title>
-  <meta name="description" content="Silla ergonómica full malla, gris o negro. Packs con descuento. Envío GRATIS a todo el Perú. Garantía 1 año. Paga al recibir en Lima.">
+  <title>Sientate | Silla Ergonómica Dalas — Envío GRATIS a todo el Perú</title>
+  <meta name="description"
+    content="Silla ergonómica full malla, gris o negro. Packs con descuento. Envío GRATIS a todo el Perú. Garantía 1 año. Paga al recibir en Lima.">
   <meta name="theme-color" content="#CC0000">
   <meta property="og:title" content="ComuniK2 | Silla Ergonómica Dalas">
   <meta property="og:description" content="La silla que tu espalda estaba esperando. Envíos a todo el Perú.">
@@ -13,471 +15,2167 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="icon" href="images/logo.png">
 
-  <!-- Estilos propios de la landing vendedora -->
+  <!-- Estilos propios de la landing vendedora — rediseño Manrope / Ripley-style -->
   <style>
-  .lp{--wa:#25D366;--green:#1a8c4e}
-  .lp img{max-width:100%;display:block}
-  .lp .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
-  .lp .btn-full{width:100%}
+    /* ===== Tipografía Manrope global para esta página ===== */
+    :root {
+      --font: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --lp-bg-alt: #F8F8F8;
+      --lp-shadow: 0 2px 16px rgba(0, 0, 0, .06);
+      --lp-shadow-h: 0 8px 32px rgba(0, 0, 0, .10);
+      --star: #E88000;
+    }
 
-  /* asegurar header por encima de elementos flotantes de la landing */
-  #site-header{position:sticky;top:0;z-index:100}
-  #site-header .header,#site-header header{position:sticky;top:0;z-index:100}
+    body {
+      font-family: var(--font);
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--dark);
+    }
 
-  /* contador barra premium */
-  .lp .countdown-bar{background:linear-gradient(90deg,#1a1a1a,#2c0000,#1a1a1a);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-  .lp .cd-label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
-  .lp .cd-label .cd-flame{font-size:18px;animation:cdpulse 1.5s ease-in-out infinite}
-  @keyframes cdpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-  .lp .cd-boxes{display:flex;align-items:center;gap:6px}
-  .lp .cd-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:6px 10px;min-width:52px;text-align:center;backdrop-filter:blur(4px)}
-  .lp .cd-box b{display:block;font-size:22px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;color:#fff}
-  .lp .cd-box small{font-size:9px;font-weight:600;opacity:.6;text-transform:uppercase;letter-spacing:.08em}
-  .lp .cd-colon{font-size:20px;font-weight:900;opacity:.4;margin:0 -2px}
-  @media(max-width:600px){
-    .lp .countdown-bar{gap:10px;padding:12px}
-    .lp .cd-label{font-size:12px}
-    .lp .cd-box{min-width:44px;padding:5px 8px}
-    .lp .cd-box b{font-size:18px}
-  }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
 
-  /* hero */
-  .lp .hero{padding:30px 0}
-  .lp .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
-  .lp .gallery-main{background:#fff;border-radius:16px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative}
-  .lp .gallery-main img{width:100%;height:100%;object-fit:contain;padding:18px}
-  .lp .badge-off{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-size:13px;font-weight:800;padding:5px 12px;border-radius:20px}
-  .lp .thumbs{display:flex;gap:10px;overflow-x:auto}
-  .lp .thumb{width:66px;height:66px;border-radius:10px;border:2px solid var(--border);background:#fff;flex-shrink:0;overflow:hidden;cursor:pointer;padding:4px}
-  .lp .thumb.active{border-color:var(--red)}
-  .lp .thumb img{width:100%;height:100%;object-fit:contain}
+    .lp {
+      --wa: #25D366;
+      --green: #1a8c4e
+    }
 
-  .lp .tag{display:inline-block;background:#FFF0F0;color:var(--red);font-size:12px;font-weight:800;padding:5px 14px;border-radius:20px;margin-bottom:12px}
-  .lp h1{font-size:30px;font-weight:900;line-height:1.15;margin-bottom:10px;color:var(--dark)}
-  .lp .stars-row{color:#E88000;font-size:15px;margin-bottom:12px}.lp .stars-row span{color:var(--gray-500);font-size:13px}
-  .lp .price{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
-  .lp .price-now{font-size:36px;font-weight:900;color:var(--red)}
-  .lp .price-old{font-size:18px;color:var(--gray-500);text-decoration:line-through}
-  .lp .cuotas{font-size:13px;color:var(--gray-500);margin-bottom:16px}
+    .lp img {
+      max-width: 100%;
+      display: block
+    }
 
-  /* stock */
-  .lp .stock-live{background:#FFF7E6;border:1px solid #FFE0A3;border-radius:10px;padding:10px 14px;margin-bottom:16px}
-  .lp .st-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px}
-  .lp .st-top b{color:var(--red)}
-  .lp .st-bar{height:7px;background:#FFE0A3;border-radius:20px;overflow:hidden}
-  .lp .st-fill{height:100%;background:linear-gradient(90deg,#ff9500,var(--red));border-radius:20px;transition:width .5s}
+    .lp .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
-  /* packs */
-  .lp .packs{margin-bottom:18px}
-  .lp .packs-h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;margin-bottom:10px}
-  .lp .packs-h .oblig{background:var(--red);color:#fff;font-size:10px;padding:3px 9px;border-radius:20px}
-  .lp .pack{border:2px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:.15s;position:relative}
-  .lp .pack:hover{border-color:#ccc}
-  .lp .pack.active{border-color:var(--red);background:#FFF0F0}
-  .lp .pack-top{display:flex;justify-content:space-between;align-items:center}
-  .lp .pack-name{font-size:15px;font-weight:800}
-  .lp .pack-save{font-size:12px;color:var(--green);font-weight:700}
-  .lp .pack-price{font-size:17px;font-weight:900}
-  .lp .pack-old{font-size:13px;color:var(--gray-500);text-decoration:line-through;margin-left:6px}
-  .lp .pack-badge{position:absolute;top:-9px;right:14px;background:var(--red);color:#fff;font-size:10px;font-weight:800;padding:2px 10px;border-radius:20px}
-  .lp .pack-mini-cd{display:flex;align-items:center;gap:6px;margin-top:8px;background:var(--dark);color:#fff;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;width:fit-content}
-  .lp .pack-mini-cd b{color:#ffd280}
+    .lp .btn-full {
+      width: 100%
+    }
 
-  /* combo colores */
-  .lp .combo{margin-bottom:18px}
-  .lp .combo h4{font-size:13px;font-weight:700;margin-bottom:10px}
-  .lp .combo-unit{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .lp .combo-unit>span{font-size:13px;font-weight:600;min-width:70px}
-  .lp .combo-opts{display:flex;gap:8px}
-  .lp .co{display:flex;align-items:center;gap:6px;border:2px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600}
-  .lp .co.active{border-color:var(--red);background:#FFF0F0}
-  .lp .dot{width:16px;height:16px;border-radius:50%;border:1px solid #ccc}
+    /* icono inline genérico — global para que también apliquen los
+       elementos flotantes que viven fuera de <main class="lp"> */
+    .ic {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle
+    }
 
-  .lp .bullets{list-style:none;margin-bottom:16px}
-  .lp .bullets li{padding:4px 0 4px 26px;position:relative;font-size:14px}
-  .lp .bullets li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}
+    .lp-sticky .btn-buy .ic {
+      width: 19px;
+      height: 19px
+    }
 
-  .lp .free-ship{display:flex;align-items:center;gap:8px;background:#E8F8EE;color:var(--green);font-size:13px;font-weight:700;padding:10px 14px;border-radius:10px;margin:14px 0}
-  .lp .instock{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--green);font-weight:600}
-  .lp .instock i{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block}
+    /* header sticky por encima de flotantes */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
 
-  .lp .sec{padding:52px 0}
-  .lp .sec-t{text-align:center;font-size:28px;font-weight:900;margin-bottom:8px;color:var(--dark)}
-  .lp .sec-s{text-align:center;color:var(--gray-500);margin-bottom:34px;font-size:15px}
+    #site-header .header,
+    #site-header header {
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
 
-  .lp .benes{
-            display:grid;
-            grid-template-columns:3.3fr 3.3fr 3.3fr;
-            gap:10px;
-          }
-  .lp .bene{background:var(--gray-100);border-radius:0px;overflow:hidden}
-  .lp .bene-img{aspect-ratio:1;background:#e5e5e5;display:flex;align-items:center;justify-content:center;color:#999;font-size:13px}
-  .lp .bene-img img{width:100%;height:100%;object-fit:cover}
-  .lp .bene-txt{padding:20px}
-  .lp .bene-txt h3{font-size:16px;font-weight:800;margin-bottom:6px}
-  .lp .bene-txt p{font-size:13px;color:var(--gray-500)}
+    /* ===================== HERO ===================== */
+    .lp .hero {
+      padding: 40px 0 20px;
+      background: #fff
+    }
 
-  .lp .cmp{background:var(--dark);color:#fff;border-radius:16px;overflow:hidden}
-  .lp .cmp-row{display:grid;grid-template-columns:1fr 1fr;text-align:center}
-  .lp .cmp-h{padding:16px;font-weight:800;font-size:15px}
-  .lp .cmp-h.us{background:var(--red)}.lp .cmp-h.them{background:#333}
-  .lp .cmp-i{padding:12px 16px;font-size:13.5px;border-top:1px solid rgba(255,255,255,.08)}
-  .lp .cmp-i.us{background:rgba(204,0,0,.12)}
+    .lp .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start
+    }
 
-  .lp .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .lp .rev{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px}
-  .lp .rev .rs{color:#E88000;font-size:14px;margin-bottom:8px}
-  .lp .rev p{font-size:13.5px;margin-bottom:12px}
-  .lp .rev-a{font-size:12px;color:var(--gray-500);font-weight:600}
-  .lp .rev-v{font-size:11px;color:var(--green);font-weight:600;margin-top:2px}
+    .lp .gallery-main {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      position: relative;
+      box-shadow: var(--lp-shadow)
+    }
 
-  .lp .faq details{border-bottom:1px solid var(--border);padding:16px 0}
-  .lp .faq summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
-  .lp .faq summary::after{content:"+";color:var(--red);font-weight:900}
-  .lp .faq details[open] summary::after{content:"−"}
-  .lp .faq p{font-size:14px;color:var(--gray-500);padding-top:10px}
+    .lp .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 26px
+    }
 
-  .lp .final{background:var(--gray-100);border-radius:16px;padding:40px 28px;text-align:center}
-  .lp .final h2{font-size:26px;font-weight:900;margin-bottom:10px}
-  .lp .trust3{display:flex;justify-content:center;gap:24px;margin-top:18px;font-size:12px;color:var(--gray-500);flex-wrap:wrap}
+    .lp .badge-off {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      letter-spacing: -0.01em
+    }
 
-  /* barra de regalos */
-  .lp .gift-bar{background:#FFF7F0;border:1px solid #FFD9C2;border-radius:12px;padding:12px 14px;margin-bottom:16px}
-  .lp .gift-top{font-size:12.5px;font-weight:600;color:#8a4b2a;margin-bottom:10px}
-  .lp .gift-tag{background:#ff6a3d;color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;margin-right:4px}
-  .lp .gift-top b{color:#e0562a}
-  .lp .gift-track{height:6px;background:#FFD9C2;border-radius:20px;overflow:hidden;margin-bottom:8px}
-  .lp .gift-fill{height:100%;background:linear-gradient(90deg,#ff9500,#ff5a2c);border-radius:20px;transition:width .5s}
-  .lp .gift-steps{display:flex;justify-content:space-between}
-  .lp .gift-step{display:flex;flex-direction:column;align-items:center;gap:2px;color:#c9a48f;font-size:10px;font-weight:700;transition:.2s}
-  .lp .gift-step.reached{color:#e0562a}
+    .lp .thumbs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 2px
+    }
 
-  /* galería con texto */
-  .lp .feat-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
-  .lp .fg-card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;background:var(--gray-100);cursor:pointer}
-  .lp .fg-card.fg-big{aspect-ratio:auto;min-height:260px}
-  .lp .fg-card img{width:100%;height:100%;object-fit:cover}
-  .lp .fg-txt{position:absolute;left:0;bottom:0;right:0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff}
-  .lp .fg-txt h3{font-size:19px;font-weight:900;margin-bottom:2px}
-  .lp .fg-txt p{font-size:12.5px;opacity:.9}
-  .lp .fg-play{position:absolute;inset:0;margin:auto;width:56px;height:56px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--dark);padding-left:4px}
+    .lp .thumb {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: #fff;
+      flex-shrink: 0;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 5px;
+      transition: border-color .2s, transform .2s
+    }
 
-  /* acordeón */
-  .lp .acc details{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
-  .lp .acc summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;padding:16px 18px}
-  .lp .acc summary::after{content:"+";color:var(--red);font-weight:900;font-size:20px}
-  .lp .acc details[open] summary::after{content:"−"}
-  .lp .acc-body{padding:0 18px 18px}
-  .lp .acc-body p{font-size:14px;color:var(--gray-500)}
-  .lp .spec-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--gray-100);font-size:13.5px}
-  .lp .spec-row span{color:var(--gray-500)}
-  .lp .spec-row b{text-align:right}
+    .lp .thumb:hover {
+      transform: translateY(-2px)
+    }
 
-  /* lightbox video */
-  .lp-vid-ov{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:210;display:none;align-items:center;justify-content:center;padding:20px}
-  .lp-vid-ov.open{display:flex}
-  .lp-vid-ov video{max-width:90%;max-height:85vh;border-radius:10px}
-  .lp-vid-x{position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
-  .lp-guarantee{position:fixed;top:150px;right:16px;width:92px;height:92px;background:var(--red);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 4px 16px rgba(204,0,0,.4);z-index:40;transform:rotate(-8deg);animation:lpwob 3s ease-in-out infinite}
-  @keyframes lpwob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(4deg)}}
-  .lp-guarantee b{font-size:18px;font-weight:900;line-height:1}
-  .lp-guarantee span{font-size:8px;font-weight:700;text-transform:uppercase}
+    .lp .thumb.active {
+      border-color: var(--red);
+      border-width: 2px
+    }
 
-  /* contador lateral */
-  .lp-sidecd{position:fixed;bottom:96px;right:24px;background:var(--dark);color:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:45;text-align:center;display:none}
-  .lp-sidecd.show{display:block}
-  .lp-sidecd p{font-size:10px;font-weight:700;text-transform:uppercase;margin-bottom:6px;color:#ff8080}
-  .lp-sidecd .b{display:flex;gap:4px;justify-content:center}
-  .lp-sidecd .b div{background:var(--red);border-radius:6px;padding:4px 7px;min-width:34px}
-  .lp-sidecd .b b{display:block;font-size:15px;font-weight:900;line-height:1}
-  .lp-sidecd .b small{font-size:7px;opacity:.85}
+    .lp .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain
+    }
 
-  /* sticky bar móvil */
-  .lp-sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(0,0,0,.1);padding:10px 14px;display:none;align-items:center;gap:12px;z-index:65}
-  .lp-sticky .sp-price{font-size:19px;font-weight:900;color:var(--red);line-height:1}
-  .lp-sticky .sp-lbl{font-size:10px;color:var(--gray-500);font-weight:600}
-  .lp-sticky .btn{flex:1}
+    /* Columna info */
+    .lp .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red-light);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
 
-  /* cupón */
-  .lp-coupon-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-  .lp-coupon-ov.open{display:flex}
-  .lp-coupon{background:#fff;border-radius:20px;max-width:400px;width:100%;overflow:hidden;position:relative;animation:lppop .35s}
-  @keyframes lppop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
-  .lp-coupon-x{position:absolute;top:12px;right:14px;background:rgba(0,0,0,.1);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;z-index:2}
-  .lp-coupon-top{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:32px 24px 24px;text-align:center}
-  .lp-coupon-top .big{font-size:52px;font-weight:900;line-height:1}
-  .lp-coupon-top p{font-size:14px;opacity:.9;margin-top:4px}
-  .lp-coupon-code{background:#fff;border:2px dashed var(--red);color:var(--red);font-weight:900;font-size:20px;letter-spacing:.1em;padding:12px;border-radius:10px;margin:16px 24px;text-align:center}
-  .lp-coupon-body{padding:0 24px 24px;text-align:center}
-  .lp-coupon-body h3{font-size:20px;font-weight:900;margin-bottom:6px}
-  .lp-coupon-body p{font-size:13px;color:var(--gray-500);margin-bottom:16px}
+    .lp h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--dark)
+    }
 
-  /* toast compras */
-  .lp-toast{position:fixed;bottom:20px;left:20px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.14);padding:12px 14px;display:flex;gap:12px;align-items:center;max-width:320px;z-index:70;transform:translateX(-120%);transition:transform .4s;opacity:0}
-  .lp-toast.show{transform:translateX(0);opacity:1}
-  .lp-toast-img{width:44px;height:44px;border-radius:8px;background:var(--gray-100);flex-shrink:0;overflow:hidden}
-  .lp-toast-img img{width:100%;height:100%;object-fit:contain;padding:3px}
-  .lp-toast-txt b{font-size:13px;display:block}
-  .lp-toast-txt span{font-size:11px;color:var(--gray-500)}
-  .lp-toast-txt .vf{color:var(--green);font-weight:600}
+    .lp .stars-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px
+    }
 
-  @media(max-width:800px){
-    .lp .hero-grid{grid-template-columns:1fr!important;display:grid!important}
-    .lp .hero-col-left,.lp .hero-col-right{display:block!important}
-    .lp .feat-gallery{margin-top:24px}
-    .lp .acc{margin-top:22px}
-    .lp .benes,.lp .revs{grid-template-columns:1fr}
-    .lp h1{font-size:24px}
-    .lp .rev:nth-child(n+3){display:none}
-    .lp-guarantee{width:74px;height:74px;top:120px;right:10px}
-    .lp-guarantee b{font-size:15px}
-    .lp-sticky{display:flex}
-    .lp-sidecd{display:none!important}
-    .wa-float{bottom:82px!important}
-    body{padding-bottom:70px}
-    .lp .feat-gallery{grid-template-columns:1fr}
-    .lp-toast{left:12px;right:12px;max-width:none}
-  }
+    .lp .stars-row .stars {
+      display: inline-flex;
+      gap: 1px
+    }
+
+    .lp .stars-row .stars .ic {
+      width: 17px;
+      height: 17px;
+      color: var(--star)
+    }
+
+    .lp .stars-row span {
+      color: var(--gray-500);
+      font-size: 13px;
+      font-weight: 500
+    }
+
+    .lp .price {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px
+    }
+
+    .lp .price-now {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.03em
+    }
+
+    .lp .price-old {
+      font-size: 20px;
+      color: var(--gray-500);
+      text-decoration: line-through
+    }
+
+    .lp .price-badge {
+      background: var(--red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--r-full)
+    }
+
+    .lp .cuotas {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 18px
+    }
+
+    /* chip de urgencia (contador reubicado) */
+    .lp .urgency {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 9px 14px;
+      margin: 4px 0 20px;
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .lp .urgency .u-flame {
+      width: 18px;
+      height: 18px;
+      color: #ff7a45;
+      animation: uflame 1.6s ease-in-out infinite
+    }
+
+    @keyframes uflame {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: .85
+      }
+    }
+
+    .lp .urgency .u-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      letter-spacing: .02em
+    }
+
+    .lp .urgency .u-time b {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 7px;
+      padding: 3px 7px;
+      font-size: 15px;
+      font-weight: 900;
+      min-width: 30px;
+      text-align: center;
+      display: inline-block
+    }
+
+    .lp .urgency .u-time i {
+      opacity: .5;
+      font-style: normal;
+      font-weight: 900
+    }
+
+    /* packs */
+    .lp .packs {
+      margin-bottom: 20px
+    }
+
+    .lp .packs-h {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px
+    }
+
+    .lp .packs-h .oblig {
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: var(--r-full);
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .lp .pack {
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 11px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+      position: relative;
+      background: #fff
+    }
+
+    .lp .pack:hover {
+      border-color: #d0d0d0;
+      box-shadow: var(--lp-shadow)
+    }
+
+    .lp .pack.active {
+      border-color: var(--red);
+      background: var(--red-light)
+    }
+
+    .lp .pack-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px
+    }
+
+    .lp .pack-name {
+      font-size: 15px;
+      font-weight: 800
+    }
+
+    .lp .pack-save {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 700;
+      margin-top: 2px
+    }
+
+    .lp .pack-price {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.02em
+    }
+
+    .lp .pack-old {
+      font-size: 13px;
+      color: var(--gray-500);
+      text-decoration: line-through;
+      margin-left: 6px;
+      font-weight: 600
+    }
+
+    .lp .pack-badge {
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 11px;
+      border-radius: var(--r-full);
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .lp .pack-mini-cd {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 10px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 9px;
+      padding: 6px 11px;
+      font-size: 11px;
+      font-weight: 700
+    }
+
+    .lp .pack-mini-cd .ic {
+      width: 14px;
+      height: 14px;
+      color: #ff7a45
+    }
+
+    .lp .pack-mini-cd b {
+      color: #ffd280;
+      font-variant-numeric: tabular-nums
+    }
+
+    /* combo colores */
+    .lp .combo {
+      margin-bottom: 20px
+    }
+
+    .lp .combo h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px
+    }
+
+    .lp .combo-unit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px
+    }
+
+    .lp .combo-unit>span {
+      font-size: 13px;
+      font-weight: 600;
+      min-width: 66px;
+      color: var(--gray-900)
+    }
+
+    .lp .combo-opts {
+      display: flex;
+      gap: 8px
+    }
+
+    .lp .co {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: border-color .2s, background .2s
+    }
+
+    .lp .co.active {
+      border-color: var(--red);
+      background: var(--red-light)
+    }
+
+    .lp .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12)
+    }
+
+    .lp .co.active .dot {
+      border-color: var(--red)
+    }
+
+    /* botones compra */
+    .lp .buy-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px
+    }
+
+    /* .btn-buy global: también aplica a sticky bar y cupón (fuera de .lp) */
+    .btn-buy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      height: 52px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      width: 100%;
+      transition: background .2s, box-shadow .2s, transform .1s
+    }
+
+    .btn-buy:active {
+      transform: scale(.99)
+    }
+
+    .btn-buy.dark {
+      background: var(--dark);
+      color: #fff
+    }
+
+    .btn-buy.dark:hover {
+      background: #333
+    }
+
+    .btn-buy.wa {
+      background: var(--green-wa);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, .3)
+    }
+
+    .btn-buy.wa:hover {
+      background: var(--green-wa-dark)
+    }
+
+    .btn-buy .ic {
+      width: 20px;
+      height: 20px
+    }
+
+    .lp .free-ship {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: #E8F8EE;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 15px;
+      border-radius: 12px;
+      margin: 14px 0
+    }
+
+    .lp .free-ship .ic {
+      width: 19px;
+      height: 19px
+    }
+
+    .lp .instock {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 600
+    }
+
+    .lp .instock i {
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 3px rgba(26, 140, 78, .18)
+    }
+
+    /* ===================== barra de regalos ===================== */
+
+
+    .lp .gift-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #8a4b2a;
+      margin-bottom: 12px
+    }
+
+    .lp .gift-top .ic {
+      width: 16px;
+      height: 16px;
+      color: #e0562a
+    }
+
+    .lp .gift-top b {
+      color: #e0562a;
+      font-weight: 800
+    }
+
+    .lp .gift-track {
+      height: 6px;
+      background: #FFE0C4;
+      border-radius: var(--r-full);
+      overflow: hidden;
+      margin-bottom: 12px
+    }
+
+    .lp .gift-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff9500, var(--red));
+      border-radius: var(--r-full);
+      transition: width .5s;
+      width: 0
+    }
+
+    .lp .gift-steps {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .lp .gift-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      color: #cbb09f;
+      font-size: 10px;
+      font-weight: 700;
+      transition: color .2s;
+      flex: 1;
+      text-align: center
+    }
+
+    .lp .gift-step .ic {
+      width: 20px;
+      height: 20px
+    }
+
+    .lp .gift-step.reached {
+      color: #e0562a
+    }
+
+    /* galería con texto */
+    .lp .feat-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 22px
+    }
+
+    .lp .fg-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: var(--lp-bg-alt);
+      cursor: pointer;
+      transition: transform .3s
+    }
+
+    .lp .fg-card:hover {
+      transform: scale(1.02)
+    }
+
+    .lp .fg-card.fg-big {
+      aspect-ratio: auto;
+      min-height: 260px
+    }
+
+    .lp .fg-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .lp .fg-txt {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 18px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .78));
+      color: #fff
+    }
+
+    .lp .fg-txt h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 3px
+    }
+
+    .lp .fg-txt p {
+      font-size: 12.5px;
+      opacity: .92;
+      font-weight: 500
+    }
+
+    .lp .fg-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 58px;
+      height: 58px;
+      background: rgba(255, 255, 255, .92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .25)
+    }
+
+    .lp .fg-play .ic {
+      width: 24px;
+      height: 24px;
+      margin-left: 3px
+    }
+
+    /* acordeón */
+    .lp .acc details {
+      border-bottom: 1px solid var(--border)
+    }
+
+    .lp .acc summary {
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 2px
+    }
+
+    .lp .acc summary::-webkit-details-marker {
+      display: none
+    }
+
+    .lp .acc summary .acc-ic {
+      width: 20px;
+      height: 20px;
+      color: var(--red);
+      transition: transform .25s;
+      flex-shrink: 0
+    }
+
+    .lp .acc details[open] summary .acc-ic {
+      transform: rotate(45deg)
+    }
+
+    .lp .acc-body {
+      padding: 0 2px 18px
+    }
+
+    .lp .acc-body p {
+      font-size: 14px;
+      color: var(--gray-500)
+    }
+
+    .lp .spec-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 12px;
+      font-size: 13.5px;
+      border-radius: 8px
+    }
+
+    .lp .spec-row:nth-child(odd) {
+      background: var(--lp-bg-alt)
+    }
+
+    .lp .spec-row span {
+      color: var(--gray-500);
+      font-weight: 600
+    }
+
+    .lp .spec-row b {
+      text-align: right;
+      font-weight: 500;
+      color: var(--dark)
+    }
+
+    /* ===================== secciones ===================== */
+    .lp .sec {
+      padding: 72px 0
+    }
+
+    .lp .sec.alt {
+      background: var(--lp-bg-alt)
+    }
+
+    .lp .sec-t {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--dark);
+      letter-spacing: -0.02em
+    }
+
+    .lp .sec-s {
+      text-align: center;
+      color: var(--gray-500);
+      max-width: 560px;
+      margin: 0 auto 44px;
+      font-size: 15.5px;
+      font-weight: 500
+    }
+
+    /* trust strip */
+    .lp .trust {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .lp .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .lp .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 26px 24px;
+      position: relative
+    }
+
+    .lp .trust-item+.trust-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 22px;
+      bottom: 22px;
+      width: 1px;
+      background: var(--border)
+    }
+
+    .lp .trust-item .ic {
+      width: 30px;
+      height: 30px;
+      color: var(--red);
+      flex-shrink: 0
+    }
+
+    .lp .trust-item b {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25
+    }
+
+    .lp .trust-item span {
+      display: block;
+      font-size: 12.5px;
+      color: var(--gray-500);
+      font-weight: 500
+    }
+
+    /* beneficios */
+    .lp .benes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .lp .bene {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--lp-shadow);
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .lp .bene:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--lp-shadow-h)
+    }
+
+    .lp .bene-img {
+      aspect-ratio: 1;
+      background: var(--lp-bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 13px
+    }
+
+    .lp .bene-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .lp .bene-txt {
+      padding: 20px
+    }
+
+    .lp .bene-txt h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px
+    }
+
+    .lp .bene-txt p {
+      font-size: 13px;
+      color: var(--gray-500);
+      font-weight: 500
+    }
+
+    /* comparativa */
+    .lp .cmp {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--lp-shadow-h)
+    }
+
+    .lp .cmp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: center
+    }
+
+    .lp .cmp-h {
+      padding: 18px;
+      font-weight: 800;
+      font-size: 15px
+    }
+
+    .lp .cmp-h.us {
+      background: var(--red)
+    }
+
+    .lp .cmp-h.them {
+      background: #333
+    }
+
+    .lp .cmp-i {
+      padding: 14px 18px;
+      font-size: 13.5px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px
+    }
+
+    .lp .cmp-i .ic {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0
+    }
+
+    .lp .cmp-i.us {
+      background: rgba(204, 0, 0, .14)
+    }
+
+    .lp .cmp-i.us .ic {
+      color: #35d07f
+    }
+
+    .lp .cmp-i.them .ic {
+      color: #888
+    }
+
+    /* reseñas */
+    .lp .revs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .lp .rev {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--lp-shadow)
+    }
+
+    .lp .rev-head {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 12px
+    }
+
+    .lp .rev-av {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .lp .rev-av-name {
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .lp .rev .stars {
+      display: inline-flex;
+      gap: 1px;
+      margin-top: 2px
+    }
+
+    .lp .rev .stars .ic {
+      width: 14px;
+      height: 14px;
+      color: var(--star)
+    }
+
+    .lp .rev p {
+      font-size: 13.5px;
+      margin-bottom: 14px;
+      color: var(--gray-900);
+      font-weight: 500
+    }
+
+    .lp .rev-v {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 700;
+      background: #E8F8EE;
+      padding: 4px 10px;
+      border-radius: var(--r-full)
+    }
+
+    .lp .rev-v .ic {
+      width: 13px;
+      height: 13px
+    }
+
+    /* faq */
+    .lp .faq details {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0
+    }
+
+    .lp .faq summary {
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px
+    }
+
+    .lp .faq summary::-webkit-details-marker {
+      display: none
+    }
+
+    .lp .faq summary .acc-ic {
+      width: 20px;
+      height: 20px;
+      color: var(--red);
+      transition: transform .25s;
+      flex-shrink: 0
+    }
+
+    .lp .faq details[open] summary .acc-ic {
+      transform: rotate(45deg)
+    }
+
+    .lp .faq p {
+      font-size: 14px;
+      color: var(--gray-500);
+      padding-top: 12px;
+      font-weight: 500
+    }
+
+    /* CTA final */
+    .lp .final {
+      background: var(--dark);
+      border-radius: 20px;
+      padding: 52px 28px;
+      text-align: center;
+      color: #fff
+    }
+
+    .lp .final h2 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #fff
+    }
+
+    .lp .final .free-ship {
+      max-width: 340px;
+      margin: 14px auto;
+      justify-content: center;
+      background: rgba(37, 211, 102, .14);
+      color: #5be592
+    }
+
+    .lp .final .btn-buy.wa {
+      max-width: 380px;
+      margin: 0 auto
+    }
+
+    .lp .trust3 {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      margin-top: 22px;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, .6);
+      flex-wrap: wrap;
+      font-weight: 500
+    }
+
+    .lp .trust3 span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .lp .trust3 .ic {
+      width: 15px;
+      height: 15px;
+      color: #35d07f
+    }
+
+    /* ===================== lightbox video ===================== */
+    .lp-vid-ov {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .9);
+      z-index: 710;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px
+    }
+
+    .lp-vid-ov.open {
+      display: flex
+    }
+
+    .lp-vid-ov video {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 14px
+    }
+
+    .lp-vid-x {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, .15);
+      border: none;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .lp-vid-x .ic {
+      width: 22px;
+      height: 22px
+    }
+
+    /* ===================== sticker garantía (esquina de la imagen) ===================== */
+    .lp-guarantee {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 84px;
+      height: 84px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 26px rgba(204, 0, 0, .38);
+      z-index: 5;
+      transform: rotate(-8deg);
+      animation: lpwob 3s ease-in-out infinite
+    }
+
+    @keyframes lpwob {
+
+      0%,
+      100% {
+        transform: rotate(-8deg)
+      }
+
+      50% {
+        transform: rotate(4deg)
+      }
+    }
+
+    .lp-guarantee b {
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1
+    }
+
+    .lp-guarantee span {
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: 2px
+    }
+
+    /* ===================== contador lateral glassmorphism ===================== */
+    .lp-sidecd {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: linear-gradient(145deg, rgba(26, 26, 26, .96), rgba(44, 0, 0, .96));
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 16px;
+      padding: 13px 15px;
+      box-shadow: 0 10px 34px rgba(0, 0, 0, .3);
+      z-index: 45;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity .35s, transform .35s
+    }
+
+    .lp-sidecd.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto
+    }
+
+    .lp-sidecd p {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 8px;
+      color: #ff9a7a
+    }
+
+    .lp-sidecd p .ic {
+      width: 13px;
+      height: 13px
+    }
+
+    .lp-sidecd .b {
+      display: flex;
+      gap: 5px;
+      justify-content: center
+    }
+
+    .lp-sidecd .b div {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 9px;
+      padding: 6px 8px;
+      min-width: 38px
+    }
+
+    .lp-sidecd .b b {
+      display: block;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+      font-variant-numeric: tabular-nums
+    }
+
+    .lp-sidecd .b small {
+      font-size: 8px;
+      opacity: .7;
+      font-weight: 600
+    }
+
+    /* ===================== sticky bar móvil ===================== */
+    .lp-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 24px rgba(0, 0, 0, .1);
+      padding: 11px 16px;
+      display: none;
+      align-items: center;
+      gap: 14px;
+      z-index: 65
+    }
+
+    .lp-sticky .sp-price {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.02em
+    }
+
+    .lp-sticky .sp-lbl {
+      font-size: 10.5px;
+      color: var(--gray-500);
+      font-weight: 600;
+      margin-top: 2px
+    }
+
+    .lp-sticky .btn-buy {
+      flex: 1;
+      height: 46px
+    }
+
+    /* ===================== cupón ===================== */
+    .lp-coupon-ov {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .6);
+      z-index: 720;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px
+    }
+
+    .lp-coupon-ov.open {
+      display: flex
+    }
+
+    .lp-coupon {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 400px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      animation: lppop .35s;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .3)
+    }
+
+    @keyframes lppop {
+      from {
+        transform: scale(.85);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .lp-coupon-x {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, .25);
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff
+    }
+
+    .lp-coupon-x .ic {
+      width: 18px;
+      height: 18px
+    }
+
+    .lp-coupon-top {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: #fff;
+      padding: 40px 24px 28px;
+      text-align: center
+    }
+
+    .lp-coupon-top .big {
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em
+    }
+
+    .lp-coupon-top p {
+      font-size: 14px;
+      opacity: .92;
+      margin-top: 6px;
+      font-weight: 500
+    }
+
+    .lp-coupon-code {
+      background: #fff;
+      border: 2px dashed var(--red);
+      color: var(--red);
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: .12em;
+      padding: 13px;
+      border-radius: 12px;
+      margin: 18px 24px;
+      text-align: center
+    }
+
+    .lp-coupon-body {
+      padding: 0 24px 26px;
+      text-align: center
+    }
+
+    .lp-coupon-body h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px
+    }
+
+    .lp-coupon-body p {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 18px;
+      font-weight: 500
+    }
+
+    .lp-coupon-body .btn-buy {
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(204, 0, 0, .28)
+    }
+
+    .lp-coupon-body .btn-buy:hover {
+      background: var(--red-dark)
+    }
+
+    /* ===================== toast compras en vivo ===================== */
+    .lp-toast {
+      position: fixed;
+      bottom: 22px;
+      left: 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .12);
+      padding: 13px 15px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      max-width: 330px;
+      z-index: 70;
+      transform: translateX(-130%);
+      transition: transform .45s, opacity .45s;
+      opacity: 0
+    }
+
+    .lp-toast.show {
+      transform: translateX(0);
+      opacity: 1
+    }
+
+    .lp-toast-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--lp-bg-alt);
+      flex-shrink: 0;
+      overflow: hidden
+    }
+
+    .lp-toast-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px
+    }
+
+    .lp-toast-txt b {
+      font-size: 13px;
+      display: block;
+      font-weight: 800
+    }
+
+    .lp-toast-txt span {
+      font-size: 11.5px;
+      color: var(--gray-500);
+      font-weight: 500
+    }
+
+    .lp-toast-txt .vf {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--green);
+      font-weight: 700;
+      margin-top: 2px
+    }
+
+    .lp-toast-txt .vf .ic {
+      width: 12px;
+      height: 12px
+    }
+
+    /* ===================== responsive ===================== */
+    @media(max-width:900px) {
+      .lp .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px
+      }
+
+      .lp .benes {
+        grid-template-columns: 1fr
+      }
+
+      .lp .trust-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .lp .trust-item:nth-child(3)::before {
+        display: none
+      }
+    }
+
+    @media(max-width:800px) {
+      .lp .hero-col-left,
+      .lp .hero-col-right {
+        display: block
+      }
+
+      .lp .feat-gallery {
+        margin-top: 24px;
+        grid-template-columns: 1fr
+      }
+
+      .lp .acc {
+        margin-top: 22px
+      }
+
+      .lp .revs {
+        grid-template-columns: 1fr
+      }
+
+      .lp h1 {
+        font-size: 26px
+      }
+
+      .lp .price-now {
+        font-size: 36px
+      }
+
+      .lp .rev:nth-child(n+3) {
+        display: none
+      }
+
+      .lp-guarantee {
+        width: 66px;
+        height: 66px;
+        top: 12px;
+        right: 12px
+      }
+
+      .lp-guarantee b {
+        font-size: 15px
+      }
+
+      .lp-guarantee span {
+        font-size: 7px
+      }
+
+      .lp-sticky {
+        display: flex
+      }
+
+      .lp-sidecd {
+        display: none !important
+      }
+
+      .wa-float {
+        bottom: 82px !important
+      }
+
+      body {
+        padding-bottom: 72px
+      }
+
+      .lp-toast {
+        left: 12px;
+        right: 12px;
+        max-width: none
+      }
+    }
+
+    @media(max-width:600px) {
+      .lp .sec {
+        padding: 52px 0
+      }
+
+      .lp .trust-grid {
+        grid-template-columns: 1fr
+      }
+
+      .lp .trust-item::before {
+        display: none !important
+      }
+
+      .lp .trust-item {
+        border-bottom: 1px solid var(--border)
+      }
+
+      .lp .urgency {
+        width: 100%;
+        justify-content: center
+      }
+    }
+
+    .lp-coupon-img-wrap {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      background: #000;
+    }
+
+    .cupon-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      animation: cupon-reveal 0.6s ease forwards;
+      transform-origin: center;
+    }
+
+    /* Entrada dramática */
+    @keyframes cupon-reveal {
+      0%   { transform: scale(1.15); opacity: 0; filter: brightness(0.3); }
+      100% { transform: scale(1);    opacity: 1; filter: brightness(1); }
+    }
+
+    /* Brillo que barre la imagen de izquierda a derecha */
+    .lp-coupon-img-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,0.35) 50%,
+        transparent 100%
+      );
+      animation: cupon-shine 2.5s ease 0.6s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes cupon-shine {
+      0%   { left: -100%; }
+      60%  { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    /* Pulso sutil en el borde del popup */
+    .lp-coupon {
+      animation: cupon-pulse-border 2s ease 1.2s infinite;
+    }
+
+    @keyframes cupon-pulse-border {
+      0%,100% { box-shadow: 0 0 0 0 rgba(204,0,0,0); }
+      50%      { box-shadow: 0 0 0 8px rgba(204,0,0,0.15); }
+    }
+
+    /* Fila de cupón dentro del carrito (alineada, limpia) */
+    .cart-coupon {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      background: #E8F8EE;
+      border: 1px solid #BFE9CF;
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin-bottom: 12px;
+    }
+    .cart-coupon__ic {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cart-coupon__ic svg { width: 18px; height: 18px; }
+    .cart-coupon__txt { flex: 1; line-height: 1.3; min-width: 0; }
+    .cart-coupon__txt b {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #1a8c4e;
+    }
+    .cart-coupon__txt span {
+      font-size: 11.5px;
+      color: #1a8c4e;
+      opacity: .85;
+    }
+    .cart-coupon__val {
+      font-size: 14px;
+      font-weight: 800;
+      color: #1a8c4e;
+      white-space: nowrap;
+    }
+    .cart-coupon__x {
+      display: flex;
+      align-items: center;
+      color: #1a8c4e;
+      opacity: .55;
+      flex-shrink: 0;
+      transition: opacity .2s;
+    }
+    .cart-coupon__x:hover { opacity: 1; }
+    .cart-coupon__x svg { width: 16px; height: 16px; }
   </style>
 </head>
+
 <body>
 
   <div id="site-header"></div>
 
   <main class="lp">
 
-    <!-- CONTADOR -->
-    <div class="countdown-bar">
-      <div class="cd-label"><span class="cd-flame">🔥</span> La oferta termina en</div>
-      <div class="cd-boxes">
-        <div class="cd-box"><b id="cd-h">08</b><small>Horas</small></div>
-        <span class="cd-colon">:</span>
-        <div class="cd-box"><b id="cd-m">00</b><small>Min</small></div>
-        <span class="cd-colon">:</span>
-        <div class="cd-box"><b id="cd-s">00</b><small>Seg</small></div>
-      </div>
-    </div>
-
     <!-- HERO -->
-    <section class="hero"><div class="wrap"><div class="hero-grid">
-      <div class="hero-col-left">
-        <div class="gallery-main"><span class="badge-off">-14%</span><img id="mainImg" src="images/productos/gris/prod1-a.jpeg" onerror="this.src='https://via.placeholder.com/500/F5F5F5/CCC?text=Foto'"></div>
-        <div class="thumbs" id="thumbs"></div>
-
-        <!-- GALERÍA CON TEXTO (columna izquierda) -->
-        <div class="feat-gallery">
-          <div class="fg-card fg-big">
-            <img src="images/productos/negro/prod2-b.jpg" onerror="this.style.display='none'">
-            <div class="fg-txt"><h3>SOPORTE LUMBAR</h3><p>Ajusta la posición según tu comodidad</p></div>
-          </div>
-          <div class="fg-card fg-video" onclick="LP.openVideo('video/silla-gris.mp4')">
-            <img src="images/productos/gris/sila-negra.gif" onerror="this.style.display='none'">
-            <div class="fg-play">▶</div>
-          </div>
-          <div class="fg-card">
-            <img src="images/productos/gris/prod1-b.png" onerror="this.style.display='none'">
-            <div class="fg-txt"><h3>MALLA 3D</h3><p>Transpirable, fresca todo el día</p></div>
-          </div>
-          <div class="fg-card fg-video" onclick="LP.openVideo('video/silla-negro.mp4')">
-            <img src="images/productos/gris/sila-negra.gif" onerror="this.style.display='none'">
-            <div class="fg-play">▶</div>
-          </div>
-          <div class="fg-card fg-big">
-            <img src="images/productos/gris/prod1-v.jpg" onerror="this.style.display='none'">
-            <div class="fg-txt"><h3>ALTA RESISTENCIA</h3><p>Base de aluminio · soporta hasta 120 kg</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-col-right">
-        <div class="hero-info">
-      
-        <h1>Silla Ergonómica Full Malla — Dalas</h1>
-        <div class="price"><span class="price-now">S/. 599</span><span class="price-old">S/. 700</span></div>
-     
-
-        <div class="gift-bar" id="giftBar">
-          <div class="gift-top"><span class="gift-tag">🎁 CYBER</span> Suma productos y desbloquea regalos — <b id="giftMsg">envío gratis desde S/180</b></div>
-          <div class="gift-track"><div class="gift-fill" id="giftFill" style="width:0%"></div></div>
-          <div class="gift-steps">
-            <div class="gift-step" data-min="180"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><small>180</small></div>
-            <div class="gift-step" data-min="250"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg><small>250</small></div>
-            <div class="gift-step" data-min="350"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><small>350</small></div>
-            <div class="gift-step" data-min="450"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2s7 3 7 10a7 7 0 01-14 0c0-7 7-10 7-10z"/></svg><small>450</small></div>
-          </div>
-        </div>
-
-        <div class="packs">
-          <div class="packs-h">Escoge tu pack <span class="oblig">Obligatorio</span></div>
-          <div class="pack active" data-pack="1" onclick="LP.selectPack(1)">
-            <div class="pack-top"><div class="pack-name">1 silla</div><div class="pack-price">S/. 599</div></div>
-          </div>
-          <div class="pack" data-pack="2" onclick="LP.selectPack(2)">
-            <span class="pack-badge">MÁS ELEGIDO</span>
-            <div class="pack-top"><div><div class="pack-name">Pack 2 sillas</div><div class="pack-save">Ahorra S/. 99</div></div><div><span class="pack-price">S/. 1,099</span><span class="pack-old">S/. 1,198</span></div></div>
-          </div>
-          <div class="pack" data-pack="3" onclick="LP.selectPack(3)">
-            <div class="pack-top"><div><div class="pack-name">Pack 3 sillas</div><div class="pack-save">Ahorra S/. 198</div></div><div><span class="pack-price">S/. 1,599</span><span class="pack-old">S/. 1,797</span></div></div>
-            <div class="pack-mini-cd">🔥 ¡Solo por hoy! Termina en <b id="pack3cd">15:00</b></div>
-          </div>
-        </div>
-
-        <div class="combo">
-          <h4>Elige el color de cada silla:</h4>
-          <div id="comboUnits"></div>
-        </div>
-
-        <button class="btn btn-dark btn-full" style="margin-bottom:10px" onclick="LP.addCart()">Añadir al carrito</button>
-        <a class="btn btn-wa btn-full" id="waBtn" href="#" target="_blank">Comprar por WhatsApp</a>
-        <div class="free-ship">🚚 Envío GRATIS a todo el Perú en esta compra</div>
-        <div class="instock"><i></i> Listo para enviar hoy</div>
-        </div><!-- /hero-info -->
-
-        <!-- ACORDEÓN (debajo del bloque de compra) -->
-        <div class="acc" style="margin-top:22px">
-          <details open>
-            <summary>Especificaciones técnicas</summary>
-            <div class="acc-body">
-              <div class="spec-row"><span>Espaldar</span><b>Full malla, borde polipropileno</b></div>
-              <div class="spec-row"><span>Cabecera</span><b>Regulable en altura y ángulo</b></div>
-              <div class="spec-row"><span>Asiento</span><b>Malla nylon transpirable</b></div>
-              <div class="spec-row"><span>Soporte lumbar</span><b>Acolchado regulable</b></div>
-              <div class="spec-row"><span>Elevación</span><b>Pistón a gas</b></div>
-              <div class="spec-row"><span>Reclinación</span><b>Syncro, bloqueo 3 posiciones</b></div>
-              <div class="spec-row"><span>Apoyabrazos</span><b>3D ajustables</b></div>
-              <div class="spec-row"><span>Base</span><b>Aluminio 5 puntas</b></div>
-              <div class="spec-row"><span>Capacidad</span><b>120 kg</b></div>
-              <div class="spec-row"><span>Garantía</span><b>1 año</b></div>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-col-left">
+            <div class="gallery-main"><span class="badge-off">-14%</span><img id="mainImg"
+                src="images/productos/gris/prod1-a.jpeg"
+                onerror="this.src='https://via.placeholder.com/500/F5F5F5/CCC?text=Foto'">
+              <div class="lp-guarantee"><b>1 AÑO</b><span>Garantía</span></div>
             </div>
-          </details>
-          <details>
-            <summary>Colores disponibles</summary>
-            <div class="acc-body"><p>Disponible en <b>Gris Ultra</b> y <b>Negro</b>. En los packs de 2 o 3 sillas puedes combinar los colores como prefieras.</p></div>
-          </details>
-          <details>
-            <summary>Tiempos de envío</summary>
-            <div class="acc-body"><p>Envío GRATIS a todo el Perú. En Lima coordinamos entrega rápida por WhatsApp. Para provincias, con embalaje reforzado.</p></div>
-          </details>
-          <details>
-            <summary>Cambios y devoluciones</summary>
-            <div class="acc-body"><p>Si el producto llega con defecto de fábrica, lo cambiamos sin costo. Contáctanos por WhatsApp con fotos.</p></div>
-          </details>
+            <div class="thumbs" id="thumbs"></div>
+
+            <!-- GALERÍA CON TEXTO (columna izquierda) -->
+            <div class="feat-gallery">
+              <div class="fg-card fg-big">
+                <img src="images/productos/negro/prod2-b.jpg" onerror="this.style.display='none'">
+                <div class="fg-txt">
+                  <h3>SOPORTE LUMBAR</h3>
+                  <p>Ajusta la posición según tu comodidad</p>
+                </div>
+              </div>
+              <div class="fg-card fg-video" onclick="LP.openVideo('video/producto.mp4')">
+                <img src="images/productos/gris/prod1-v.jpg" onerror="this.style.display='none'">
+                <div class="fg-play"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="fg-card">
+                <img src="images/productos/gris/prod1-b.png" onerror="this.style.display='none'">
+                <div class="fg-txt">
+                  <h3>MALLA 3D</h3>
+                  <p>Transpirable, fresca todo el día</p>
+                </div>
+              </div>
+              <div class="fg-card fg-video" onclick="LP.openVideo('video/sila-negra.gif')">
+                <img src="images/productos/gris/sila-negra.gif" onerror="this.style.display='none'">
+                <div class="fg-play"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="fg-card fg-big">
+                <img src="images/productos/gris/prod1-c.jpeg" onerror="this.style.display='none'">
+                <div class="fg-txt">
+                  <h3>ALTA RESISTENCIA</h3>
+                  <p>Base de aluminio · soporta hasta 120 kg</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-col-right">
+            <div class="hero-info">
+
+              <span class="tag">
+                <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                Oferta especial
+              </span>
+
+              <h1>Silla Ergonómica Full Malla — Dalas</h1>
+
+              
+
+              <div class="price"><span class="price-now">S/. 599</span></div>
+              <p class="cuotas">Precio por unidad </p>
+
+              <!-- CONTADOR reubicado como chip de urgencia -->
+              <div class="urgency">
+                <svg class="ic u-flame" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                <span>La oferta termina en</span>
+                <span class="u-time"><b id="cd-h">08</b><i>:</i><b id="cd-m">00</b><i>:</i><b id="cd-s">00</b></span>
+              </div>
+
+              <div class="packs">
+                <div class="packs-h">Escoge tu pack <span class="oblig">Obligatorio</span></div>
+                <div class="pack active" data-pack="1" onclick="LP.selectPack(1)">
+                  <div class="pack-top">
+                    <div class="pack-name">1 silla</div>
+                    <div class="pack-price">S/. 599</div>
+                  </div>
+                </div>
+                <div class="pack" data-pack="2" onclick="LP.selectPack(2)">
+                  <span class="pack-badge">MÁS ELEGIDO</span>
+                  <div class="pack-top">
+                    <div>
+                      <div class="pack-name">Pack 2 sillas</div>
+                      <div class="pack-save">Ahorra S/. 108</div>
+                    </div>
+                    <div><span class="pack-price">S/. 1090</span><span class="pack-old">S/. 1,198</span></div>
+                  </div>
+                </div>
+                <div class="pack" data-pack="3" onclick="LP.selectPack(3)">
+                  <div class="pack-top">
+                    <div>
+                      <div class="pack-name">Pack 3 sillas</div>
+                      <div class="pack-save">Ahorra S/. 297</div>
+                    </div>
+                    <div><span class="pack-price">S/. 1,500</span><span class="pack-old">S/. 1,797</span></div>
+                  </div>
+                  <div class="pack-mini-cd"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> ¡Solo por hoy! Termina en <b id="pack3cd">60:00</b></div>
+                </div>
+              </div>
+
+              <div class="combo">
+                <h4>Elige el color de cada silla:</h4>
+                <div id="comboUnits"></div>
+              </div>
+
+              <div class="buy-btns">
+                <button class="btn-buy dark" onclick="LP.addCart()">
+                  <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+                  Añadir al carrito
+                </button>
+                <a class="btn-buy wa" id="waBtn" href="#" target="_blank">
+                  <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.414z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
+
+              <div class="free-ship">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h13v11H1z"/><path d="M14 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+                Envío GRATIS a todo el Perú en esta compra
+              </div>
+              <div class="instock"><i></i> Listo para enviar hoy</div>
+            </div><!-- /hero-info -->
+
+            <!-- ACORDEÓN (debajo del bloque de compra) -->
+            <div class="acc" style="margin-top:26px">
+              <details open>
+                <summary>Especificaciones técnicas <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+                <div class="acc-body">
+                  <div class="spec-row"><span>Espaldar</span><b>Full malla, borde polipropileno</b></div>
+                  <div class="spec-row"><span>Cabecera</span><b>Regulable en altura y ángulo</b></div>
+                  <div class="spec-row"><span>Asiento</span><b>Malla nylon transpirable</b></div>
+                  <div class="spec-row"><span>Soporte lumbar</span><b>Acolchado regulable</b></div>
+                  <div class="spec-row"><span>Elevación</span><b>Pistón a gas</b></div>
+                  <div class="spec-row"><span>Reclinación</span><b>Syncro, bloqueo 3 posiciones</b></div>
+                  <div class="spec-row"><span>Apoyabrazos</span><b>3D ajustables</b></div>
+                  <div class="spec-row"><span>Base</span><b>Aluminio 5 puntas</b></div>
+                  <div class="spec-row"><span>Capacidad</span><b>120 kg</b></div>
+                  <div class="spec-row"><span>Garantía</span><b>1 año</b></div>
+                </div>
+              </details>
+              <details>
+                <summary>Colores disponibles <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+                <div class="acc-body">
+                  <p>Disponible en <b>Gris Ultra</b> y <b>Negro</b>. En los packs de 2 o 3 sillas puedes combinar los
+                    colores como prefieras.</p>
+                </div>
+              </details>
+              <details>
+                <summary>Tiempos de envío <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+                <div class="acc-body">
+                  <p>Envío GRATIS a todo el Perú. En Lima coordinamos entrega rápida por WhatsApp. Para provincias, con
+                    embalaje reforzado.</p>
+                </div>
+              </details>
+              <details>
+                <summary>Cambios y devoluciones <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+                <div class="acc-body">
+                  <p>Si el producto llega con defecto de fábrica, lo cambiamos sin costo. Contáctanos por WhatsApp con
+                    fotos.</p>
+                </div>
+              </details>
+            </div>
+          </div>
         </div>
       </div>
-    </div></div></section>
+    </section>
 
-     <!-- tiker del medio-->
-    <div class="ticker-medio">
-        <div class="ticker__track">
-          <span> ENVIO GRATIS </span>
-          <span> GARANTIA DE 1 AÑO </span>
-          <span> COMPRA RAPIDA  </span>
-          <span> APROVECHA LAS OFERTAS </span>
-          <span> ENVIO GRATIS A TODO EL PERU</span>
+    <!-- TRUST STRIP -->
+    <div class="trust">
+      <div class="wrap">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h13v11H1z"/><path d="M14 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+            <div><b>Envío a todo el Perú</b><span>Coordinado por WhatsApp</span></div>
+          </div>
+          <div class="trust-item">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div><b>Garantía 1 año</b><span>Contra defectos de fábrica</span></div>
+          </div>
+          <div class="trust-item">
+            <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.414z"/></svg>
+            <div><b>Compra por WhatsApp</b><span>Rápido y sin complicaciones</span></div>
+          </div>
+          <div class="trust-item">
+            <svg class="ic" viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+            <div><b>+450 reseñas</b><span>4.9 de calificación</span></div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- BENEFICIOS -->
-    <section class="sec"><div class="wrap-another">
-      <h2 class="sec-t"><b> SILLA ERGONOMICA DALAS FULL MALLA</b></h2>
-      <p class="sec-s">Modelo de la colección ergonómica avanzada que integra un respaldo y asiento en malla técnica  </p>
+    <section class="sec">
+      <div class="wrap">
+        <h2 class="sec-t">Silla Ergonómica Dalas Full Malla</h2>
+        <p class="sec-s">Modelo de la colección ergonómica avanzada que integra respaldo y asiento en malla técnica transpirable.</p>
 
-
-      <div class="benes">
-        <div class="bene"><div class="bene-img"><img src="images/productos/gris/sila-negra.gif" onerror="this.parentElement.innerHTML='Foto: malla transpirable'"></div></div>
-        <div class="bene"><div class="bene-img"><img src="images/productos/gris/prod1-b.jpeg" onerror="this.parentElement.innerHTML='Foto: soporte lumbar'"></div></div>
-        <div class="bene"><div class="bene-img"><img src="images/productos/gris/use_silla.jpg" onerror="this.parentElement.innerHTML='Foto: puntos de ajuste'"></div></div>
+        <div class="benes">
+          <div class="bene">
+            <div class="bene-img"><img src="images/productos/gris/sila-negra.gif"
+                onerror="this.parentElement.innerHTML='Foto: malla transpirable'"></div>
+            <div class="bene-txt">
+              <h3>Malla transpirable</h3>
+              <p>Frescura durante toda la jornada, sin acumular calor.</p>
+            </div>
+          </div>
+          <div class="bene">
+            <div class="bene-img"><img src="images/productos/gris/prod1-b.jpeg"
+                onerror="this.parentElement.innerHTML='Foto: soporte lumbar'"></div>
+            <div class="bene-txt">
+              <h3>Soporte lumbar</h3>
+              <p>Regulable en altura y profundidad para cuidar tu columna.</p>
+            </div>
+          </div>
+          <div class="bene">
+            <div class="bene-img"><img src="images/productos/gris/use_silla.jpg"
+                onerror="this.parentElement.innerHTML='Foto: puntos de ajuste'"></div>
+            <div class="bene-txt">
+              <h3>Puntos de ajuste</h3>
+              <p>Apoyabrazos 3D, reclinación syncro y cabecera regulable.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div></section>
+    </section>
 
     <!-- COMPARATIVA -->
-    <section class="sec" style="background:var(--gray-100)"><div class="wrap">
-      <h2 class="sec-t">Dalas vs una silla común</h2><p class="sec-s">La diferencia se siente desde el primer día</p>
-      <div class="cmp">
-        <div class="cmp-row"><div class="cmp-h us">Silla Dalas</div><div class="cmp-h them">Silla común</div></div>
-        <div class="cmp-row"><div class="cmp-i us">✓ Soporte lumbar ajustable</div><div class="cmp-i">✗ Soporte fijo</div></div>
-        <div class="cmp-row"><div class="cmp-i us">✓ Malla transpirable</div><div class="cmp-i">✗ Esponja que da calor</div></div>
-        <div class="cmp-row"><div class="cmp-i us">✓ Base de aluminio · 120 kg</div><div class="cmp-i">✗ Base plástica</div></div>
-        <div class="cmp-row"><div class="cmp-i us">✓ Garantía 1 año</div><div class="cmp-i">✗ Sin garantía</div></div>
+    <section class="sec alt">
+      <div class="wrap">
+        <h2 class="sec-t">Dalas vs una silla común</h2>
+        <p class="sec-s">La diferencia se siente desde el primer día</p>
+        <div class="cmp">
+          <div class="cmp-row">
+            <div class="cmp-h us">Silla Dalas</div>
+            <div class="cmp-h them">Silla común</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-i us"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg> Soporte lumbar ajustable</div>
+            <div class="cmp-i them"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Soporte fijo</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-i us"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg> Malla transpirable</div>
+            <div class="cmp-i them"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Esponja que da calor</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-i us"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg> Base de aluminio · 120 kg</div>
+            <div class="cmp-i them"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Base plástica</div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-i us"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg> Garantía 1 año</div>
+            <div class="cmp-i them"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Sin garantía</div>
+          </div>
+        </div>
       </div>
-    </div></section>
+    </section>
 
     <!-- RESEÑAS -->
-    <section class="sec"><div class="wrap">
-      <h2 class="sec-t">Lo que dicen los clientes</h2><p class="sec-s">Reseñas verificadas de Mercado Libre</p>
-      <div class="revs">
-        <div class="rev"><div class="rs">★★★★★</div><p>"Excelente silla, la prefiero mil veces sobre las gamer. El soporte lumbar es muy bueno. ¡Recomendadísimo!"</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
-        <div class="rev"><div class="rs">★★★★★</div><p>"Muy buena silla. El asiento en malla y el respaldar garantiza máxima frescura."</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
-        <div class="rev"><div class="rs">★★★★★</div><p>"Excelente producto, me ayudó a reducir dolores de espalda."</p><div class="rev-a">Comprador verificado</div><div class="rev-v">✓ Compra verificada</div></div>
+    <section class="sec">
+      <div class="wrap">
+        <h2 class="sec-t">Lo que dicen los clientes</h2>
+        <p class="sec-s">Reseñas verificadas de Mercado Libre</p>
+        <div class="revs">
+          <div class="rev">
+            <div class="rev-head">
+              <div class="rev-av">E</div>
+              <div>
+                <div class="rev-av-name">Comprador verificado</div>
+                <span class="stars">
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                </span>
+              </div>
+            </div>
+            <p>"Excelente silla, la prefiero mil veces sobre las gamer. El soporte lumbar es muy bueno. ¡Recomendadísimo!"</p>
+            <span class="rev-v"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Compra verificada</span>
+          </div>
+          <div class="rev">
+            <div class="rev-head">
+              <div class="rev-av">M</div>
+              <div>
+                <div class="rev-av-name">Comprador verificado</div>
+                <span class="stars">
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                </span>
+              </div>
+            </div>
+            <p>"Muy buena silla. El asiento en malla y el respaldar garantiza máxima frescura."</p>
+            <span class="rev-v"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Compra verificada</span>
+          </div>
+          <div class="rev">
+            <div class="rev-head">
+              <div class="rev-av">J</div>
+              <div>
+                <div class="rev-av-name">Comprador verificado</div>
+                <span class="stars">
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                  <svg class="ic" viewBox="0 0 24 24" fill="#E88000"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                </span>
+              </div>
+            </div>
+            <p>"Excelente producto, me ayudó a reducir dolores de espalda."</p>
+            <span class="rev-v"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Compra verificada</span>
+          </div>
+        </div>
       </div>
-    </div></section>
+    </section>
 
     <!-- FAQ -->
-    <section class="sec" style="background:var(--gray-100)"><div class="wrap" style="max-width:700px">
-      <h2 class="sec-t">Preguntas frecuentes</h2>
-      <div class="faq" style="margin-top:28px">
-        <details><summary>¿El envío es realmente gratis?</summary><p>Sí, delivery gratuito a todo el Perú. Coordinamos por WhatsApp.</p></details>
-        <details><summary>¿Puedo pedir el pack con colores distintos?</summary><p>¡Claro! En los packs de 2 o 3 eliges el color de cada silla (gris o negro) como prefieras.</p></details>
-        <details><summary>¿Cuánto peso soporta?</summary><p>Hasta 120 kg gracias a su base de aluminio de 5 puntas.</p></details>
-        <details><summary>¿Qué medios de pago aceptan?</summary><p>Yape, Plin, transferencia y pago al recibir en Lima.</p></details>
-        <details><summary>¿Tiene garantía?</summary><p>Sí, 1 año de garantía contra defectos de fábrica.</p></details>
+    <section class="sec alt">
+      <div class="wrap" style="max-width:720px">
+        <h2 class="sec-t">Preguntas frecuentes</h2>
+        <div class="faq" style="margin-top:28px">
+          <details>
+            <summary>¿El envío es realmente gratis? <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>Sí, delivery gratuito a todo el Perú. Coordinamos por WhatsApp.</p>
+          </details>
+          <details>
+            <summary>¿Puedo pedir el pack con colores distintos? <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>¡Claro! En los packs de 2 o 3 eliges el color de cada silla (gris o negro) como prefieras.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto peso soporta? <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>Hasta 120 kg gracias a su base de aluminio de 5 puntas.</p>
+          </details>
+          <details>
+            <summary>¿Qué medios de pago aceptan? <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>Yape, Plin, transferencia y pago al recibir en Lima.</p>
+          </details>
+          <details>
+            <summary>¿Tiene garantía? <svg class="acc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>Sí, 1 año de garantía contra defectos de fábrica.</p>
+          </details>
+        </div>
       </div>
-    </div></section>
+    </section>
 
     <!-- CTA FINAL -->
-    <section class="sec"><div class="wrap">
-      <div class="final">
-        <h2>¿Listo para trabajar sin dolor?</h2>
-        <div class="free-ship" style="max-width:340px;margin:12px auto;justify-content:center">🎁 Lleva 2 y ahorra + envío GRATIS</div>
-        <a class="btn btn-wa" id="waBtn2" href="#" target="_blank" style="max-width:360px;margin:0 auto">Comprar por WhatsApp</a>
-        <div class="trust3"><span>✓ Envío gratis Perú</span><span>✓ Garantía 1 año</span><span>✓ Pago al recibir en Lima</span></div>
+    <section class="sec">
+      <div class="wrap">
+        <div class="final">
+          <h2>¿Listo para trabajar sin dolor?</h2>
+          <div class="free-ship">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M12 8S11 3 8.5 3 6 6 8 8"/><path d="M12 8s1-5 3.5-5S18 6 16 8"/></svg>
+            Lleva 2 y ahorra + envío GRATIS
+          </div>
+          <a class="btn-buy wa" id="waBtn2" href="#" target="_blank">
+            <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.414z"/></svg>
+            Comprar por WhatsApp
+          </a>
+          <div class="trust3">
+            <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Envío gratis Perú</span>
+            <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Garantía 1 año</span>
+            <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Pago al recibir en Lima</span>
+          </div>
+        </div>
       </div>
-    </div></section>
+    </section>
 
   </main>
 
   <div id="site-footer"></div>
 
-  <!-- STICKER GARANTÍA -->
-  <div class="lp-guarantee">
-    <b>1 AÑO</b><span>Garantía</span>
-  </div>
-
   <!-- CONTADOR LATERAL -->
   <div class="lp-sidecd" id="sideCd">
-    <p>🔥 Termina en</p>
-    <div class="b"><div><b id="scd-h">08</b><small>H</small></div><div><b id="scd-m">00</b><small>M</small></div><div><b id="scd-s">00</b><small>S</small></div></div>
+    <p><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Termina en</p>
+    <div class="b">
+      <div><b id="scd-h">08</b><small>H</small></div>
+      <div><b id="scd-m">00</b><small>M</small></div>
+      <div><b id="scd-s">00</b><small>S</small></div>
+    </div>
   </div>
 
   <!-- STICKY BAR MÓVIL -->
   <div class="lp-sticky">
-    <div><div class="sp-price" id="spPrice">S/. 599</div><div class="sp-lbl" id="spLbl">1 silla · envío gratis</div></div>
-    <button class="btn btn-wa" onclick="LP.stickyBuy()">Pedir</button>
+    <div>
+      <div class="sp-price" id="spPrice">S/. 599</div>
+      <div class="sp-lbl" id="spLbl">1 silla · envío gratis</div>
+    </div>
+    <button class="btn-buy wa" onclick="LP.stickyBuy()">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602z"/></svg>
+      Pedir
+    </button>
   </div>
 
   <!-- CUPÓN -->
   <div class="lp-coupon-ov" id="couponOv">
     <div class="lp-coupon">
-      <button class="lp-coupon-x" onclick="LP.closeCoupon()">✕</button>
-      <div class="lp-coupon-top"><div class="big">S/ 30</div><p>de descuento en tu primera compra</p></div>
-      <div class="lp-coupon-code">DALAS30</div>
+      <button class="lp-coupon-x" onclick="LP.closeCoupon()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="lp-coupon-top lp-coupon-img-wrap">
+        <img src="images/banners/cupon.png" alt="Cupón envío gratis" class="cupon-img" style="cursor:pointer" onclick="LP.claimCoupon()">
+      </div>
       <div class="lp-coupon-body">
-        <h3>¡Bienvenido a ComuniK2!</h3>
-        <p>Reclama tu cupón ahora por WhatsApp antes de que expire.</p>
-        <a class="btn btn-wa btn-full" href="https://wa.me/51955372605?text=Hola,%20quiero%20reclamar%20mi%20cup%C3%B3n%20*DALAS30*%20de%20S%2F30%20de%20descuento%20en%20la%20Silla%20Dalas" target="_blank" onclick="LP.closeCoupon()">Reclamar por WhatsApp</a>
+        <div class="lp-coupon-code">ENVIOGRATIS</div>
+        <button class="btn-buy btn-full" onclick="LP.claimCoupon()">Reclamar mi cupón</button>
       </div>
     </div>
   </div>
 
+
   <!-- LIGHTBOX VIDEO -->
   <div class="lp-vid-ov" id="vidOv" onclick="LP.closeVideo()">
-    <button class="lp-vid-x" onclick="LP.closeVideo()">✕</button>
-    <video id="vidPlayer" controls><source id="vidSrc" src="" type="video/mp4"></video>
+    <button class="lp-vid-x" onclick="LP.closeVideo()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <video id="vidPlayer" controls>
+      <source id="vidSrc" src="" type="video/mp4">
+    </video>
   </div>
 
   <!-- components: header, footer, carrito, WhatsApp -->
@@ -485,214 +2183,236 @@
 
   <!-- Lógica de la landing -->
   <script>
-  var LP=(function(){
-    var WA='51955372605';
-    var PACK_PRICE={1:599,2:1099,3:1599};
-    var imgs={
-      gris:['images/productos/gris/prod1-a.jpeg','images/productos/gris/prod1-b.png','images/productos/gris/prod1-e.png','images/productos/gris/prod1-d.jpeg'],
-      negro:['images/productos/negro/prod2-b.jpg','images/productos/negro/prod2-g.png','images/productos/negro/prod2-f.png','images/productos/negro/parte_trasera.png']
-    };
-    var pack=1, colors=['gris'];
-    var cart=JSON.parse(localStorage.getItem('ck-lp-cart')||'[]');
-    function ph(){return 'https://via.placeholder.com/500/F5F5F5/CCC?text=Foto'}
+      var LP = (function () {
+      var WA = '51985693172';
+      var PACK_PRICE = { 1: 599, 2: 1099, 3: 1599 };
+      var imgs = {
+        gris: ['images/productos/gris/prod1-a.jpeg', 'images/productos/gris/prod1-b.png', 'images/productos/gris/prod1-e.png', 'images/productos/gris/prod1-d.jpeg'],
+        negro: ['images/productos/negro/prod2-b.jpg', 'images/productos/negro/prod2-g.png', 'images/productos/negro/prod2-f.png', 'images/productos/negro/parte_trasera.png']
+      };
+      var pack = 1, colors = ['gris'];
+      var cart = JSON.parse(localStorage.getItem('ck-lp-cart') || '[]');
+      var COUPON = { code: 'ENVIOGRATIS' };
+      var couponActive = localStorage.getItem('ck-coupon') === '1';
+      function ph() { return 'https://via.placeholder.com/500/F5F5F5/CCC?text=Foto' }
+      var truckSvg = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1a8c4e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><path d="M1 4h13v11H1z"/><path d="M14 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>';
 
-    function renderThumbs(){
-      var t=document.getElementById('thumbs');t.innerHTML='';
-      imgs[colors[0]].forEach(function(src,i){
-        var d=document.createElement('div');d.className='thumb'+(i===0?' active':'');
-        d.innerHTML='<img src="'+src+'" onerror="this.src=\''+ph()+'\'">';
-        d.onclick=function(){document.getElementById('mainImg').src=src;document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('active')});d.classList.add('active')};
-        t.appendChild(d);
-      });
-      var mi=document.getElementById('mainImg');mi.src=imgs[colors[0]][0];mi.onerror=function(){this.src=ph()};
-    }
-    function selectPack(n){
-      pack=n;
-      document.querySelectorAll('.pack').forEach(function(p){p.classList.toggle('active',+p.dataset.pack===n)});
-      colors=[];for(var i=0;i<n;i++)colors.push('gris');
-      renderCombo();renderThumbs();updateWa();
-    }
-    function renderCombo(){
-      var c=document.getElementById('comboUnits');c.innerHTML='';
-      for(var i=0;i<pack;i++){
-        var row=document.createElement('div');row.className='combo-unit';
-        row.innerHTML='<span>Silla '+(i+1)+':</span><div class="combo-opts">'+
-          '<div class="co'+(colors[i]==='gris'?' active':'')+'" data-i="'+i+'" data-c="gris"><span class="dot" style="background:#C8C8C8"></span>Gris</div>'+
-          '<div class="co'+(colors[i]==='negro'?' active':'')+'" data-i="'+i+'" data-c="negro"><span class="dot" style="background:#1A1A1A"></span>Negro</div></div>';
-        c.appendChild(row);
+      function renderThumbs() {
+        var t = document.getElementById('thumbs'); t.innerHTML = '';
+        imgs[colors[0]].forEach(function (src, i) {
+          var d = document.createElement('div'); d.className = 'thumb' + (i === 0 ? ' active' : '');
+          d.innerHTML = '<img src="' + src + '" onerror="this.src=\'' + ph() + '\'">';
+          d.onclick = function () { document.getElementById('mainImg').src = src; document.querySelectorAll('.thumb').forEach(function (x) { x.classList.remove('active') }); d.classList.add('active') };
+          t.appendChild(d);
+        });
+        var mi = document.getElementById('mainImg'); mi.src = imgs[colors[0]][0]; mi.onerror = function () { this.src = ph() };
       }
-      c.querySelectorAll('.co').forEach(function(o){
-        o.onclick=function(){
-          var i=+o.dataset.i;colors[i]=o.dataset.c;
-          o.parentElement.querySelectorAll('.co').forEach(function(x){x.classList.remove('active')});
-          o.classList.add('active');
-          if(i===0)renderThumbs();updateWa();
-        };
-      });
-    }
-    function packLabel(){
-      var g=0,n=0;colors.forEach(function(c){c==='gris'?g++:n++});
-      var p=[];if(g)p.push(g+' Gris');if(n)p.push(n+' Negro');return p.join(' + ');
-    }
-    function updateWa(){
-      var msg='Hola, quiero el *Pack '+pack+' silla'+(pack>1?'s':'')+' Dalas*\nColores: '+packLabel()+'\nPrecio: S/. '+PACK_PRICE[pack]+'\n\n¿Tienen stock? Vi el envío gratis 🙌';
-      var url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
-      document.getElementById('waBtn').href=url;
-      document.getElementById('waBtn2').href=url;
-      var spP=document.getElementById('spPrice'),spL=document.getElementById('spLbl');
-      if(!cart.length){spP.textContent='S/. '+PACK_PRICE[pack].toLocaleString();spL.textContent=pack+' silla'+(pack>1?'s':'')+' · envío gratis';}
-    }
 
-    /* ---- carrito: usa el sidebar #ck-cart de components.js ---- */
-    function save(){localStorage.setItem('ck-lp-cart',JSON.stringify(cart))}
-    function addCart(){
-      cart.push({pack:pack,colors:colors.slice(),price:PACK_PRICE[pack],label:packLabel()});
-      save();renderCart();openCart();
-    }
-    function renderCart(){
-      var items=document.getElementById('cart-items');
-      var foot=document.getElementById('cart-foot');
-      var countEls=document.querySelectorAll('.cart-count');
-      if(!items)return;
-      countEls.forEach(function(c){c.textContent=cart.length});
-      if(!cart.length){
-        items.innerHTML='<div class="cart__empty">Tu carrito está vacío</div>';
-        if(foot)foot.style.display='none';
-        var spP=document.getElementById('spPrice');if(spP){updateWa();}
-        updateGift(0);
-        return;
+      function selectPack(n) {
+        pack = n;
+        document.querySelectorAll('.pack').forEach(function (p) { p.classList.toggle('active', +p.dataset.pack === n) });
+        colors = []; for (var i = 0; i < n; i++)colors.push('gris');
+        renderCombo(); renderThumbs(); updateWa();
       }
-      items.innerHTML='';var total=0;
-      cart.forEach(function(it,ix){
-        total+=it.price;
-        var img=imgs[it.colors[0]][0];
-        items.innerHTML+='<div class="cart-item">'+
-          '<img class="cart-item__img" src="'+img+'" onerror="this.src=\''+ph()+'\'">'+
-          '<div><div class="cart-item__name">Pack '+it.pack+' silla'+(it.pack>1?'s':'')+' Dalas</div>'+
-          '<div class="cart-item__color">'+it.label+'</div>'+
-          '<div class="cart-item__price">S/. '+it.price+'</div></div>'+
-          '<button class="cart-item__remove" onclick="LP.rm('+ix+')">'+
-          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>'+
-          '</button></div>';
-      });
-      var totalEl=document.getElementById('cart-total');if(totalEl)totalEl.textContent='S/. '+total.toLocaleString();
-      if(foot)foot.style.display='block';
-      updateGift(total);
-      var spP=document.getElementById('spPrice'),spL=document.getElementById('spLbl');
-      if(spP){spP.textContent='S/. '+total.toLocaleString();spL.textContent=cart.length+' en carrito · toca para ver';}
-    }
-    function rm(i){cart.splice(i,1);save();renderCart()}
-
-    /* barra de regalos según total */
-    function updateGift(total){
-      var steps=[180,250,350,450];
-      var max=450;
-      var pct=Math.min(100,total/max*100);
-      var f=document.getElementById('giftFill');if(f)f.style.width=pct+'%';
-      document.querySelectorAll('.gift-step').forEach(function(s){
-        s.classList.toggle('reached',total>=+s.dataset.min);
-      });
-      var msg=document.getElementById('giftMsg');
-      if(!msg)return;
-      if(total===0)msg.textContent='envío gratis desde S/180';
-      else if(total<180)msg.textContent='te faltan S/'+(180-total)+' para envío gratis';
-      else if(total<250)msg.textContent='¡envío gratis desbloqueado! 🎁';
-      else if(total<350)msg.textContent='¡regalo nivel 2 desbloqueado! 🎁';
-      else if(total<450)msg.textContent='¡regalo nivel 3 desbloqueado! 🎁';
-      else msg.textContent='¡todos los regalos desbloqueados! 🎉';
-    }
-
-    /* video lightbox */
-    function openVideo(src){
-      var ov=document.getElementById('vidOv'),v=document.getElementById('vidPlayer'),s=document.getElementById('vidSrc');
-      s.src=src;v.load();ov.classList.add('open');v.play();
-    }
-    function closeVideo(){
-      var ov=document.getElementById('vidOv'),v=document.getElementById('vidPlayer');
-      v.pause();ov.classList.remove('open');
-    }
-    function openCart(){
-      var c=document.getElementById('ck-cart'),o=document.getElementById('ck-overlay');
-      if(c)c.classList.add('open');if(o)o.classList.add('open');
-    }
-    function checkout(){
-      if(!cart.length)return;
-      var msg='*NUEVO PEDIDO - ComuniK2*\n━━━━━━━━━━━━━\n';var total=0;
-      cart.forEach(function(i){total+=i.price;msg+='• Pack '+i.pack+' silla'+(i.pack>1?'s':'')+' ('+i.label+') — S/. '+i.price+'\n'});
-      msg+='━━━━━━━━━━━━━\n*TOTAL: S/. '+total+'*\nCon envío GRATIS 🚚\n\n¿Confirmamos el pedido?';
-      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
-    }
-    function stickyBuy(){
-      if(cart.length){openCart();}
-      else{window.open(document.getElementById('waBtn').href,'_blank');}
-    }
-
-    /* cupón / contadores / stock / toast */
-    function closeCoupon(){document.getElementById('couponOv').classList.remove('open')}
-    function tick(){
-      var end=new Date();end.setHours(23,59,59);
-      var d=Math.max(0,end-new Date());
-      var h=('0'+Math.floor(d/3.6e6)).slice(-2),m=('0'+Math.floor(d%3.6e6/6e4)).slice(-2),s=('0'+Math.floor(d%6e4/1000)).slice(-2);
-      ['cd-h','scd-h'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=h});
-      ['cd-m','scd-m'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=m});
-      ['cd-s','scd-s'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=s});
-    }
-    var p3end=Date.now()+15*60*1000;
-    function tickP3(){
-      var d=Math.max(0,p3end-Date.now());
-      var m=Math.floor(d/6e4),s=Math.floor(d%6e4/1000);
-      var e=document.getElementById('pack3cd');if(e)e.textContent=('0'+m).slice(-2)+':'+('0'+s).slice(-2);
-    }
-    var stock=7;
-    function tickStock(){if(stock>3&&Math.random()>.6){stock--;var n=document.getElementById('stockN');if(n)n.textContent=stock;var f=document.getElementById('stFill');if(f)f.style.width=(stock/20*100)+'%';}}
-    var names=['Carlos M.','María de Lima','José R.','Ana P.','Luis Trujillo','Rosa de Arequipa','Pedro G.','Carmen L.','Miguel S.','Diana Cusco'];
-    var acts=['acaba de comprar','compró hace 2 min','pidió por WhatsApp','reservó su silla'];
-    function showToast(){
-      var t=document.getElementById('toast');if(!t)return;
-      document.getElementById('toastName').textContent=names[Math.floor(Math.random()*names.length)];
-      document.getElementById('toastAction').textContent=acts[Math.floor(Math.random()*acts.length)]+' la Silla Dalas';
-      document.getElementById('toastImg').src=imgs[Math.random()>.5?'gris':'negro'][0];
-      t.classList.add('show');setTimeout(function(){t.classList.remove('show')},4500);
-    }
-
-    function init(){
-      // conectar botón "Pedir por WhatsApp" del carrito de components.js
-      var chk=document.getElementById('ck-checkout');
-      if(chk)chk.addEventListener('click',checkout);
-      selectPack(1);renderCart();
-      setInterval(tick,1000);tick();
-      setInterval(tickP3,1000);tickP3();
-      setTimeout(function(){document.getElementById('couponOv').classList.add('open')},2500);
-      setTimeout(function(){showToast();setInterval(showToast,12000)},6000);
-      window.addEventListener('scroll',function(){
-        document.getElementById('sideCd').classList.toggle('show',window.scrollY>500);
-      });
-    }
-    // components.js inyecta el carrito async; esperamos a que exista #ck-cart
-    var wait=setInterval(function(){
-      if(document.getElementById('ck-cart')){clearInterval(wait);init();}
-    },100);
-
-    // reordenar galería en móvil: foto → info → galería → acordeón
-    function reorderMobile(){
-      var gal=document.querySelector('.feat-gallery');
-      var right=document.querySelector('.hero-col-right');
-      var left=document.querySelector('.hero-col-left');
-      var acc=document.querySelector('.hero-col-right .acc');
-      if(!gal||!right||!left)return;
-      if(window.innerWidth<=800){
-        // galería antes del acordeón en la columna derecha
-        if(acc&&gal.nextElementSibling!==acc){right.insertBefore(gal,acc);}
-      }else{
-        // desktop: galería vuelve a la izquierda
-        if(gal.parentElement!==left){left.appendChild(gal);}
+      function renderCombo() {
+        var c = document.getElementById('comboUnits'); c.innerHTML = '';
+        for (var i = 0; i < pack; i++) {
+          var row = document.createElement('div'); row.className = 'combo-unit';
+          row.innerHTML = '<span>Silla ' + (i + 1) + ':</span><div class="combo-opts">' +
+            '<div class="co' + (colors[i] === 'gris' ? ' active' : '') + '" data-i="' + i + '" data-c="gris"><span class="dot" style="background:#C8C8C8"></span>Gris</div>' +
+            '<div class="co' + (colors[i] === 'negro' ? ' active' : '') + '" data-i="' + i + '" data-c="negro"><span class="dot" style="background:#1A1A1A"></span>Negro</div></div>';
+          c.appendChild(row);
+        }
+        c.querySelectorAll('.co').forEach(function (o) {
+          o.onclick = function () {
+            var i = +o.dataset.i; colors[i] = o.dataset.c;
+            o.parentElement.querySelectorAll('.co').forEach(function (x) { x.classList.remove('active') });
+            o.classList.add('active');
+            if (i === 0) renderThumbs(); updateWa();
+          };
+        });
       }
-    }
-    window.addEventListener('resize',reorderMobile);
-    setTimeout(reorderMobile,300);
+      function packLabel() {
+        var g = 0, n = 0; colors.forEach(function (c) { c === 'gris' ? g++ : n++ });
+        var p = []; if (g) p.push(g + ' Gris'); if (n) p.push(n + ' Negro'); return p.join(' + ');
+      }
+      function updateWa() {
+        var msg = 'Hola, quiero el *Pack ' + pack + ' silla' + (pack > 1 ? 's' : '') + ' Dalas*\nColores: ' + packLabel() + '\nPrecio: S/. ' + PACK_PRICE[pack] + '\n\n¿Tienen stock? Vi el envío gratis';
+        var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+        document.getElementById('waBtn').href = url;
+        document.getElementById('waBtn2').href = url;
+        var spP = document.getElementById('spPrice'), spL = document.getElementById('spLbl');
+        if (!cart.length) { spP.textContent = 'S/. ' + PACK_PRICE[pack].toLocaleString(); spL.textContent = pack + ' silla' + (pack > 1 ? 's' : '') + ' · envío gratis'; }
+      }
 
-    return {selectPack:selectPack,addCart:addCart,rm:rm,stickyBuy:stickyBuy,closeCoupon:closeCoupon,openVideo:openVideo,closeVideo:closeVideo};
-  })();
+      function save() { localStorage.setItem('ck-lp-cart', JSON.stringify(cart)) }
+      function addCart() {
+        cart.push({ pack: pack, colors: colors.slice(), price: PACK_PRICE[pack], label: packLabel() });
+        save(); renderCart(); openCart();
+      }
+      function couponRowHTML() {
+        return '<div class="cart-coupon">' +
+          '<span class="cart-coupon__ic">' + truckSvg + '</span>' +
+          '<div class="cart-coupon__txt"><b>Cupón ' + COUPON.code + '</b><span>Envío GRATIS aplicado</span></div>' +
+          '<span class="cart-coupon__val">S/. 0</span>' +
+          '<button class="cart-coupon__x" onclick="LP.removeCoupon()" aria-label="Quitar cupón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>' +
+          '</div>';
+      }
+      function renderCart() {
+        var items = document.getElementById('cart-items');
+        var foot = document.getElementById('cart-foot');
+        var countEls = document.querySelectorAll('.cart-count');
+        if (!items) return;
+        countEls.forEach(function (c) { c.textContent = cart.length });
+        var couponHTML = couponActive ? couponRowHTML() : '';
+        if (!cart.length) {
+          items.innerHTML = couponHTML + '<div class="cart__empty">Tu carrito está vacío</div>';
+          if (foot) foot.style.display = 'none';
+          updateGift(0); updateWa();
+          return;
+        }
+        items.innerHTML = ''; var total = 0;
+        cart.forEach(function (it, ix) {
+          total += it.price;
+          var img = imgs[it.colors[0]][0];
+          items.innerHTML += '<div class="cart-item">' +
+            '<img class="cart-item__img" src="' + img + '" onerror="this.src=\'' + ph() + '\'">' +
+            '<div><div class="cart-item__name">Pack ' + it.pack + ' silla' + (it.pack > 1 ? 's' : '') + ' Dalas</div>' +
+            '<div class="cart-item__color">' + it.label + '</div>' +
+            '<div class="cart-item__price">S/. ' + it.price + '</div></div>' +
+            '<button class="cart-item__remove" onclick="LP.rm(' + ix + ')">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>' +
+            '</button></div>';
+        });
+
+        /* fila cupón envío gratis */
+        items.innerHTML += couponHTML;
+
+        var totalEl = document.getElementById('cart-total');
+        if (totalEl) totalEl.textContent = 'S/. ' + total.toLocaleString();
+        if (foot) foot.style.display = 'block';
+        updateGift(total);
+        var spP = document.getElementById('spPrice'), spL = document.getElementById('spLbl');
+        if (spP) { spP.textContent = 'S/. ' + total.toLocaleString(); spL.textContent = cart.length + ' en carrito · toca para ver'; }
+      }
+      function rm(i) { cart.splice(i, 1); save(); renderCart() }
+
+      function claimCoupon() {
+        couponActive = true;
+        localStorage.setItem('ck-coupon', '1');
+        closeCoupon();
+        renderCart();
+        openCart();
+      }
+      function removeCoupon() {
+        couponActive = false;
+        localStorage.removeItem('ck-coupon');
+        renderCart();
+      }
+
+      function updateGift(total) {
+        var max = 450;
+        var pct = Math.min(100, total / max * 100);
+        var f = document.getElementById('giftFill'); if (f) f.style.width = pct + '%';
+        document.querySelectorAll('.gift-step').forEach(function (s) {
+          s.classList.toggle('reached', total >= +s.dataset.min);
+        });
+        var msg = document.getElementById('giftMsg');
+        if (!msg) return;
+        if (total === 0) msg.textContent = 'envío gratis desde S/180';
+        else if (total < 180) msg.textContent = 'te faltan S/' + (180 - total) + ' para envío gratis';
+        else if (total < 300) msg.textContent = '¡envío gratis desbloqueado!';
+        else if (total < 400) msg.textContent = '¡regalo nivel 2 desbloqueado!';
+        else if (total < 450) msg.textContent = '¡regalo nivel 3 desbloqueado!';
+        else msg.textContent = '¡todos los regalos desbloqueados!';
+      }
+
+      function openVideo(src) {
+        var ov = document.getElementById('vidOv'), v = document.getElementById('vidPlayer'), s = document.getElementById('vidSrc');
+        s.src = src; v.load(); ov.classList.add('open'); v.play();
+      }
+      function closeVideo() {
+        var ov = document.getElementById('vidOv'), v = document.getElementById('vidPlayer');
+        v.pause(); ov.classList.remove('open');
+      }
+      function openCart() {
+        var c = document.getElementById('ck-cart'), o = document.getElementById('ck-overlay');
+        if (c) c.classList.add('open'); if (o) o.classList.add('open');
+      }
+      function checkout() {
+        if (!cart.length) return;
+        var msg = '*NUEVO PEDIDO - ComuniK2*\n━━━━━━━━━━━━━\n'; var total = 0;
+        cart.forEach(function (i) { total += i.price; msg += '• Pack ' + i.pack + ' silla' + (i.pack > 1 ? 's' : '') + ' (' + i.label + ') — S/. ' + i.price + '\n' });
+        msg += '━━━━━━━━━━━━━\n*TOTAL: S/. ' + total + '*\n';
+        if (couponActive) msg += 'Cupón ' + COUPON.code + ': Envío GRATIS\n';
+        msg += '\n¿Confirmamos el pedido?';
+        window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+      }
+      function stickyBuy() {
+        if (cart.length) { openCart(); }
+        else { window.open(document.getElementById('waBtn').href, '_blank'); }
+      }
+      function closeCoupon() { document.getElementById('couponOv').classList.remove('open') }
+      function tick() {
+        var end = new Date(); end.setHours(23, 59, 59);
+        var d = Math.max(0, end - new Date());
+        var h = ('0' + Math.floor(d / 3.6e6)).slice(-2), m = ('0' + Math.floor(d % 3.6e6 / 6e4)).slice(-2), s = ('0' + Math.floor(d % 6e4 / 1000)).slice(-2);
+        ['cd-h', 'scd-h'].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = h });
+        ['cd-m', 'scd-m'].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = m });
+        ['cd-s', 'scd-s'].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = s });
+      }
+      var p3end = Date.now() + 15 * 60 * 1000;
+      function tickP3() {
+        var d = Math.max(0, p3end - Date.now());
+        var m = Math.floor(d / 6e4), s = Math.floor(d % 6e4 / 1000);
+        var e = document.getElementById('pack3cd'); if (e) e.textContent = ('0' + m).slice(-2) + ':' + ('0' + s).slice(-2);
+      }
+      var names = ['Carlos M.', 'María de Lima', 'José R.', 'Ana P.', 'Luis Trujillo', 'Rosa de Arequipa', 'Pedro G.', 'Carmen L.', 'Miguel S.', 'Diana Cusco'];
+      var acts = ['acaba de comprar', 'compró hace 2 min', 'pidió por WhatsApp', 'reservó su silla'];
+      function showToast() {
+        var t = document.getElementById('toast'); if (!t) return;
+        document.getElementById('toastName').textContent = names[Math.floor(Math.random() * names.length)];
+        document.getElementById('toastAction').textContent = acts[Math.floor(Math.random() * acts.length)] + ' la Silla Dalas';
+        document.getElementById('toastImg').src = imgs[Math.random() > .5 ? 'gris' : 'negro'][0];
+        t.classList.add('show'); setTimeout(function () { t.classList.remove('show') }, 4500);
+      }
+      function init() {
+        var chk = document.getElementById('ck-checkout');
+        if (chk) chk.addEventListener('click', checkout);
+        selectPack(1); renderCart();
+        setInterval(tick, 1000); tick();
+        setInterval(tickP3, 1000); tickP3();
+        setTimeout(function () { document.getElementById('couponOv').classList.add('open') }, 2500);
+        setTimeout(function () { showToast(); setInterval(showToast, 12000) }, 6000);
+        window.addEventListener('scroll', function () {
+          var sc = document.getElementById('sideCd'); if (sc) sc.classList.toggle('show', window.scrollY > 500);
+        });
+      }
+      var wait = setInterval(function () {
+        if (document.getElementById('ck-cart')) { clearInterval(wait); init(); }
+      }, 100);
+      function reorderMobile() {
+        var gal = document.querySelector('.feat-gallery');
+        var right = document.querySelector('.hero-col-right');
+        var left = document.querySelector('.hero-col-left');
+        var acc = document.querySelector('.hero-col-right .acc');
+        if (!gal || !right || !left) return;
+        if (window.innerWidth <= 800) {
+          if (acc && gal.parentElement !== right) { right.insertBefore(gal, acc); }
+        } else {
+          if (gal.parentElement !== left) { left.appendChild(gal); }
+        }
+      }
+      window.addEventListener('resize', reorderMobile);
+      setTimeout(reorderMobile, 300);
+
+      return {
+        selectPack: selectPack, addCart: addCart, rm: rm, stickyBuy: stickyBuy,
+        closeCoupon: closeCoupon, openVideo: openVideo, closeVideo: closeVideo,
+        claimCoupon: claimCoupon, removeCoupon: removeCoupon
+      };
+    })();
   </script>
 </body>
+
 </html>
