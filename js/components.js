@@ -30,7 +30,7 @@
 
           '<nav class="main-nav"><ul>' +
             '<li><a href="' + p('index.html') + '">Inicio</a></li>' +
-            '<li><a href="' + p('index.html') + '#productos">Ofertas <span class="badge-hot">Hot</span></a></li>' +
+            '<li><a href="' + p('index.html') + '#packs">Ofertas <span class="badge-hot">Hot</span></a></li>' +
             '<li><a href="' + p('pages/nosotros.html') + '">Nosotros</a></li>' +
             '<li><a href="' + p('pages/contacto.html') + '">Contacto</a></li>' +
           '</ul></nav>' +
@@ -154,7 +154,7 @@ function tickerItems() {
           '</div>' +
 
         '</div>' +
-        '<div class="footer__bottom">© ' + new Date().getFullYear() + ' ComuniK2 Perú. Todos los derechos reservados.</div>' +
+        '<div class="footer__bottom">© ' + new Date().getFullYear() + ' Grupo CK2 Perú. Todos los derechos reservados.</div>' +
       '</footer>'
     );
   }

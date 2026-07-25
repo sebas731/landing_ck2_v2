@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Sientate</title>
-  <meta name="description" content="Consejos de ergonomía, postura y bienestar para que trabajes y estudies sin dolor de espalda.">
+  <title>¿Tu silla te está pasando factura? | Blog Siéntate</title>
+  <meta name="description" content="Ergonomía sin complicaciones: aprende a detectar si tu silla daña tu espalda, cómo regularla en 5 pasos y cuándo conviene cambiarla.">
   <meta name="theme-color" content="#CC0000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,71 +13,343 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/producto.css">
   <link rel="icon" href="../images/logo.png">
+
+  <!-- Estilos del artículo (editorial, estilo revista) -->
+  <style> 
+    .art-wrap { background: #fff; }
+
+    /* barra de progreso de lectura */
+    .readbar-track {
+      position: sticky;
+      top: 0;
+      height: 3px;
+      background: transparent;
+      z-index: 90;
+    }
+    .readbar {
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--red), #ff5a5a);
+      transition: width .1s linear;
+    }
+
+    .art {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 22px 72px;
+    }
+    .art > * { animation: artUp .6s both; }
+    .art > *:nth-child(2) { animation-delay: .05s; }
+    .art > *:nth-child(3) { animation-delay: .1s; }
+    .art > *:nth-child(4) { animation-delay: .15s; }
+    @keyframes artUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .art > * { animation: none; }
+    }
+
+    .art__crumb {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 13px; color: var(--gray-500); margin-bottom: 22px;
+    }
+    .art__crumb a:hover { color: var(--red); }
+    .art__crumb svg { width: 14px; height: 14px; }
+
+    .art__cat {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 16px;
+    }
+    .art__cat::before { content: ''; width: 22px; height: 2px; background: var(--red); }
+
+    .art h1 {
+      font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+      font-weight: 800; line-height: 1.12; letter-spacing: -0.025em;
+      color: var(--dark); margin-bottom: 18px;
+    }
+    .art__lead {
+      font-size: 1.18rem; line-height: 1.7; color: var(--gray-500);
+      font-weight: 500; font-style: italic; margin-bottom: 28px;
+      border-left: 3px solid var(--red); padding-left: 18px;
+    }
+
+    /* meta autor */
+    .art__meta {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 0; border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border); margin-bottom: 30px;
+    }
+    .art__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--red); color: #fff; font-weight: 800; font-size: 17px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .art__meta-txt b { font-size: 14px; font-weight: 800; display: block; color: var(--dark); }
+    .art__meta-txt span { font-size: 12.5px; color: var(--gray-500); }
+    .art__share { margin-left: auto; display: flex; gap: 8px; }
+    .art__share a {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; color: var(--gray-500);
+      transition: all .2s;
+    }
+    .art__share a:hover { border-color: var(--dark); color: var(--dark); }
+    .art__share svg { width: 16px; height: 16px; }
+
+    /* figuras / imágenes dinámicas */
+    .art figure { margin: 30px 0; }
+    .art figure .art__imgbox {
+      border-radius: 18px; overflow: hidden; background: var(--gray-100);
+      box-shadow: 0 14px 40px rgba(0,0,0,.10);
+    }
+    .art figure img {
+      width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .art figure:hover img { transform: scale(1.04); }
+    .art figcaption {
+      font-size: 12.5px; color: var(--gray-500); text-align: center;
+      margin-top: 10px; font-style: italic;
+    }
+
+    /* índice de contenido */
+    .art__toc {
+      background: var(--gray-100); border: 1px solid var(--border);
+      border-radius: 18px; padding: 24px 26px; margin: 34px 0;
+    }
+    .art__toc h4 {
+      font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--dark); margin-bottom: 16px;
+    }
+    .art__toc ol { list-style: none; counter-reset: toc; display: grid; gap: 12px; }
+    .art__toc li { counter-increment: toc; }
+    .art__toc a {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 15px; font-weight: 600; color: var(--gray-900); transition: color .2s;
+    }
+    .art__toc a:hover { color: var(--red); }
+    .art__toc a::before {
+      content: counter(toc); flex-shrink: 0;
+      width: 26px; height: 26px; border-radius: 8px;
+      background: #fff; border: 1px solid var(--border);
+      color: var(--red); font-weight: 800; font-size: 13px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* cuerpo */
+    .art__body h2 {
+      font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 800; color: var(--dark);
+      letter-spacing: -0.02em; margin: 44px 0 14px; scroll-margin-top: 80px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .art__body h2::before {
+      content: ''; width: 8px; height: 26px; border-radius: 4px; background: var(--red); flex-shrink: 0;
+    }
+    .art__body h3 { font-size: 1.12rem; font-weight: 800; color: var(--dark); margin: 26px 0 8px; }
+    .art__body p { font-size: 1.06rem; line-height: 1.8; color: #333; margin-bottom: 18px; }
+    .art__body a.inline { color: var(--red); font-weight: 700; border-bottom: 1px solid rgba(204,0,0,.35); }
+    .art__body a.inline:hover { border-color: var(--red); }
+    .art__body ul { margin: 0 0 20px; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .art__body ul li {
+      position: relative; padding-left: 32px; font-size: 1.04rem; line-height: 1.6; color: #333;
+    }
+    .art__body ul li::before {
+      content: ''; position: absolute; left: 0; top: 3px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--red-light);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23CC0000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: center;
+    }
+
+    /* callout / tip */
+    .art__tip {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--red-light); border: 1px solid #ffd4d4;
+      border-radius: 16px; padding: 18px 20px; margin: 26px 0;
+    }
+    .art__tip svg { width: 24px; height: 24px; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+    .art__tip b { color: var(--dark); }
+    .art__tip p { margin: 0; font-size: .98rem; line-height: 1.6; color: #4a3a3a; }
+
+    /* pull quote */
+    .art__quote {
+      font-size: 1.35rem; font-weight: 800; line-height: 1.4; color: var(--dark);
+      letter-spacing: -0.01em; text-align: center; margin: 38px 0;
+      padding: 0 10px;
+    }
+    .art__quote span { color: var(--red); }
+
+    /* CTA final */
+    .art__cta {
+      margin-top: 48px; background: var(--dark); border-radius: 20px;
+      padding: 36px 32px; text-align: center; color: #fff;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .art__cta h3 { font-size: 1.5rem; font-weight: 800; color: #fff; }
+    .art__cta p { color: rgba(255,255,255,.7); font-size: .98rem; margin-bottom: 8px; }
+    .art__cta .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .art__cta .btn-lnk {
+      display: inline-flex; align-items: center; gap: 9px; height: 50px; padding: 0 26px;
+      border-radius: 12px; font-weight: 700; font-size: .98rem; transition: background .2s, transform .1s;
+    }
+    .art__cta .btn-lnk:active { transform: scale(.98); }
+    .art__cta .btn-lnk.wa { background: var(--green-wa); color: #fff; }
+    .art__cta .btn-lnk.wa:hover { background: var(--green-wa-dark); }
+    .art__cta .btn-lnk.ghost { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+    .art__cta .btn-lnk.ghost:hover { background: rgba(255,255,255,.18); }
+    .art__cta .btn-lnk svg { width: 19px; height: 19px; }
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
 
-  <header class="page-hero">
-    <div class="container">
-      <h1>Blog ComuniK2</h1>
-      <p>Ergonomía, postura y bienestar para tu día a día.</p>
-    </div>
-  </header>
+  <div class="readbar-track"><div class="readbar" id="readbar"></div></div>
 
-  <main class="container">
-    <div class="blog-grid">
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-1.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Ergonomía</span>
-          <h3>5 señales de que tu silla está dañando tu espalda</h3>
-          <p>Dolor lumbar al final del día, hormigueo, mala postura... aprende a detectarlas a tiempo.</p>
+  <div class="art-wrap">
+    <article class="art">
+
+      <nav class="art__crumb">
+        <a href="../index.html">Inicio</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
+        <span>Blog</span>
+      </nav>
+
+      <span class="art__cat">Ergonomía · Bienestar</span>
+      <h1>¿Tu silla te está pasando factura? Lo que tu espalda intenta decirte</h1>
+
+      <p class="art__lead">Pasamos más de 8 horas al día sentados, pero casi nadie piensa en la silla hasta que aparece el dolor. La buena noticia: la mayoría de molestias de espalda al trabajar no vienen de tu cuerpo, sino de cómo (y en qué) te sientas.</p>
+
+      <div class="art__meta">
+        <div class="art__avatar">S</div>
+        <div class="art__meta-txt">
+          <b>Equipo Siéntate</b>
+          <span>6 min de lectura · Actualizado en julio 2026</span>
         </div>
-      </article>
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-2.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Postura</span>
-          <h3>Cómo regular tu silla en 5 pasos</h3>
-          <p>Altura, lumbar, reposabrazos y reclinación: la guía rápida para sentarte bien.</p>
+        <div class="art__share">
+          <a href="https://wa.me/51985693162" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Compartir en Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
         </div>
-      </article>
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-3.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Bienestar</span>
-          <h3>Pausas activas para quienes trabajan sentados</h3>
-          <p>Pequeños ejercicios cada hora que marcan una gran diferencia en tu salud.</p>
+      </div>
+
+      <figure>
+        <div class="art__imgbox">
+          <img id="big_img" src="../images/productos/gris/use_silla.jpg" alt="Persona trabajando con buena postura en una silla ergonómica"
+            onerror="this.onerror=null;this.src='../images/productos/gris/prod1-a.jpeg'">
         </div>
-      </article>
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-4.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Home office</span>
-          <h3>Cómo armar un escritorio ergonómico en casa</h3>
-          <p>Monitor, teclado, silla y luz: el setup ideal para el teletrabajo.</p>
+        <figcaption>Una buena silla no se nota… hasta que trabajas todo el día sin dolor.</figcaption>
+      </figure>
+
+      <div class="art__toc">
+        <h4>Índice de contenido</h4>
+        <ol>
+          <li><a href="#s1">¿Por qué tu silla importa más de lo que crees?</a></li>
+          <li><a href="#s2">5 señales de que tu silla te está dañando</a></li>
+          <li><a href="#s3">Qué hace diferente a una silla ergonómica</a></li>
+          <li><a href="#s4">Cómo regular tu silla en 5 pasos</a></li>
+          <li><a href="#s5">Pausas activas: el complemento que tu espalda necesita</a></li>
+          <li><a href="#s6">¿Cuándo conviene cambiar de silla?</a></li>
+        </ol>
+      </div>
+
+      <div class="art__body">
+
+        <h2 id="s1">¿Por qué tu silla importa más de lo que crees?</h2>
+        <p>Sentarse parece lo más inofensivo del mundo, pero mantener una mala postura durante horas comprime la zona lumbar, tensa los hombros y reduce la circulación en las piernas. Con el tiempo, ese pequeño malestar diario se convierte en dolor crónico, fatiga y menos concentración.</p>
+        <p>La ergonomía no es un lujo ni una moda: es simplemente diseñar el asiento para que acompañe la curva natural de tu columna, en lugar de pelear contra ella. Cuando la silla trabaja a tu favor, tu cuerpo deja de gastar energía en sostenerse y la puedes usar en lo que de verdad importa.</p>
+
+        <div class="art__quote">Tu espalda no se queja de una hora sentado. Se queja de <span>mil horas mal sentado.</span></div>
+
+        <h2 id="s2">5 señales de que tu silla te está dañando</h2>
+        <p>Tu cuerpo avisa mucho antes de que el problema sea serio. Si reconoces varias de estas señales, tu silla probablemente es parte del problema:</p>
+        <ul>
+          <li><b>Dolor lumbar al final del día</b> que desaparece cuando te levantas o caminas.</li>
+          <li><b>Tensión en cuello y hombros</b>, sobre todo si acercas la cabeza a la pantalla.</li>
+          <li><b>Hormigueo o piernas dormidas</b>, señal de que el asiento presiona la circulación.</li>
+          <li><b>Te encorvas sin darte cuenta</b> porque la silla no da soporte a tu espalda baja.</li>
+          <li><b>Cambias de posición todo el tiempo</b> buscando una comodidad que nunca llega.</li>
+        </ul>
+
+        <div class="art__tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <p><b>Dato clave:</b> el problema rara vez es "aguantar poco". Si tienes que hacer un esfuerzo consciente para sentarte bien, es la silla la que debería hacer ese trabajo por ti.</p>
         </div>
-      </article>
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-5.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Salud</span>
-          <h3>El verdadero costo de una mala postura</h3>
-          <p>Lo que tu cuerpo paga a largo plazo por sentarte mal cada día.</p>
+
+        <h2 id="s3">Qué hace diferente a una silla ergonómica</h2>
+        <p>No todas las sillas de oficina son ergonómicas, aunque lo digan en la etiqueta. La diferencia está en cuánto puedes adaptarla <i>a ti</i>, y no al revés. Estos son los elementos que realmente marcan la diferencia:</p>
+
+        <figure>
+          <div class="art__imgbox">
+            <img src="../images/productos/gris/postura.png" alt="Puntos de ajuste ergonómico de una silla"
+              onerror="this.onerror=null;this.src='../images/productos/gris/prod1-b.jpeg'">
+          </div>
+          <figcaption>Soporte lumbar, malla transpirable y apoyabrazos ajustables: los tres pilares.</figcaption>
+        </figure>
+
+        <h3>Soporte lumbar regulable</h3>
+        <p>Es el corazón de una buena silla. Debe poder ajustarse en altura y profundidad para calzar justo en la curva de tu espalda baja, sin obligarte a encorvarte.</p>
+        <h3>Respaldo en malla transpirable</h3>
+        <p>La malla técnica se adapta a tu espalda y deja circular el aire, así evitas ese calor incómodo de la esponja tradicional en jornadas largas.</p>
+        <h3>Apoyabrazos 3D y base sólida</h3>
+        <p>Los apoyabrazos ajustables relajan los hombros, y una base de aluminio de 5 puntas garantiza estabilidad y durabilidad, soportando el uso diario sin ceder.</p>
+
+        <h2 id="s4">Cómo regular tu silla en 5 pasos</h2>
+        <p>Tener una buena silla no sirve de nada si está mal configurada. Dedica dos minutos a esto y tu espalda lo agradecerá:</p>
+        <ul>
+          <li><b>Altura del asiento:</b> tus pies deben quedar planos en el suelo y las rodillas a 90°.</li>
+          <li><b>Soporte lumbar:</b> ajústalo hasta que sientas que sostiene tu espalda baja sin empujarte.</li>
+          <li><b>Respaldo:</b> reclínalo ligeramente (100–110°) para repartir el peso, no totalmente recto.</li>
+          <li><b>Apoyabrazos:</b> a la altura en que tus codos formen 90° sin levantar los hombros.</li>
+          <li><b>Pantalla:</b> el borde superior del monitor a la altura de tus ojos, a un brazo de distancia.</li>
+        </ul>
+
+        <h2 id="s5">Pausas activas: el complemento que tu espalda necesita</h2>
+        <p>Ninguna silla, por buena que sea, reemplaza al movimiento. La regla de oro: cada 45–60 minutos, levántate, estira la espalda y camina un poco. Estos micro-descansos reactivan la circulación y descargan la tensión acumulada.</p>
+        <p>Combinar una buena silla con pausas activas es la fórmula real para trabajar muchas horas sin pagar el precio en tu salud.</p>
+
+        <h2 id="s6">¿Cuándo conviene cambiar de silla?</h2>
+        <p>Si tu silla no tiene soporte lumbar regulable, si el relleno ya está vencido, si cruje o se hunde, o si terminas el día con dolor pese a sentarte bien… es momento de cambiarla. Piénsalo como una inversión en salud: es el mueble en el que pasas más horas de tu vida.</p>
+        <p>En <a class="inline" href="../index.html#packs">Siéntate</a> diseñamos la Silla Ergonómica Dalas justamente con estos principios: full malla, soporte lumbar regulable, apoyabrazos 3D y base de aluminio, con garantía de 1 año.</p>
+
+        <div class="art__cta">
+          <h3>¿Lista tu espalda para un cambio?</h3>
+          <p>Te asesoramos sin compromiso para elegir la silla perfecta para ti.</p>
+          <div class="cta-row">
+            <a class="btn-lnk wa" href="https://wa.me/51985693162?text=Hola,%20le%C3%AD%20el%20blog%20y%20quiero%20asesor%C3%ADa%20para%20elegir%20mi%20silla" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602z"/></svg>
+              Asesórame por WhatsApp
+            </a>
+            <a class="btn-lnk ghost" href="../index.html#packs">
+              Ver la Silla Dalas
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
-      </article>
-      <article class="blog-card">
-        <img class="blog-card__img" src="../images/banners/blog-6.jpg" alt="" onerror="this.style.opacity=.3">
-        <div class="blog-card__body">
-          <span class="blog-card__tag">Guía de compra</span>
-          <h3>Qué mirar antes de comprar una silla ergonómica</h3>
-          <p>Soporte lumbar, materiales, garantía: lo esencial para no equivocarte.</p>
-        </div>
-      </article>
-    </div>
-  </main>
+
+      </div>
+    </article>
+  </div>
 
   <div id="site-footer"></div>
   <script src="../js/components.js"></script>
+  <script>
+    (function () {
+      var bar = document.getElementById('readbar');
+      if (!bar) return;
+      function upd() {
+        var h = document.documentElement;
+        var scrolled = h.scrollTop || document.body.scrollTop;
+        var height = h.scrollHeight - h.clientHeight;
+        bar.style.width = (height > 0 ? (scrolled / height * 100) : 0) + '%';
+      }
+      window.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    })();
+  </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | Sientate</title>
-  <meta name="description" content="Contáctanos por WhatsApp, email o el formulario. Estamos de lunes a sábado de 9am a 6pm para ayudarte.">
+  <title>Contacto | Siéntate</title>
+  <meta name="description" content="Contáctanos por WhatsApp, email o el formulario. Te asesoramos para elegir la silla ergonómica perfecta. Lunes a sábado.">
   <meta name="theme-color" content="#CC0000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,69 +13,468 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/producto.css">
   <link rel="icon" href="../images/logo.png">
+
+  <!-- Rediseño de la página de contacto (estilo editorial cálido) -->
+  <style>
+    .cx {
+      /* Paleta oficial del sitio (variables.css) */
+      --rust: #CC0000;        /* acento = rojo de marca */
+      --rust-dark: #A50000;
+      --rust-soft: #FFF0F0;   /* red-light */
+      --cream: #F4F4F4;       /* gray-100 (fondo suave) */
+      --cream-2: #FFF0F0;     /* tinte rojo muy sutil */
+      --ink: #1A1A1A;         /* dark */
+    }
+
+    .cx * { box-sizing: border-box; }
+
+    .cx-wrap {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* ===================== HERO ===================== */
+    .cx-hero {
+      background:
+        radial-gradient(120% 90% at 100% 0%, var(--cream-2) 0%, var(--cream) 55%);
+      padding: 54px 0 64px;
+      overflow: hidden;
+    }
+    .cx-hero__grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .cx-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 18px;
+    }
+    .cx-eyebrow::before {
+      content: '';
+      width: 26px; height: 2px;
+      background: var(--rust);
+      display: inline-block;
+    }
+    .cx-hero h1 {
+      font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+    .cx-hl {
+      display: inline-block;
+      background: var(--rust);
+      color: #fff;
+      padding: 2px 16px 6px;
+      border-radius: 14px;
+      margin-top: 8px;
+      box-shadow: 0 8px 22px rgba(204, 0, 0, .22);
+    }
+    .cx-hero__lead {
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: #767676;
+      max-width: 460px;
+      margin: 0 0 28px;
+    }
+    .cx-hero__lead b { color: var(--rust); font-weight: 800; }
+
+    /* Pill de WhatsApp destacado (estilo banner) */
+    .cx-wa-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 26px 12px 12px;
+      border-radius: 999px;
+      box-shadow: 0 14px 30px rgba(37, 211, 102, .34);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .cx-wa-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(37, 211, 102, .45);
+    }
+    .cx-wa-pill__ic {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cx-wa-pill__ic svg { width: 26px; height: 26px; }
+    .cx-wa-pill__txt small {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .85;
+    }
+    .cx-wa-pill__txt b {
+      display: block;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: .01em;
+      line-height: 1.1;
+    }
+    .cx-hero__note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #767676;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cx-hero__note svg { width: 15px; height: 15px; color: var(--rust); }
+
+    /* Imagen lifestyle */
+    .cx-hero__media {
+      position: relative;
+    }
+    .cx-hero__media img {
+      width: 100%;
+      border-radius: 26px;
+      display: block;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, .18);
+      aspect-ratio: 4/4.3;
+      object-fit: cover;
+    }
+    .cx-hero__media::before {
+      content: '';
+      position: absolute;
+      inset: -18px -18px auto auto;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      background: var(--rust-soft);
+      z-index: -1;
+    }
+    .cx-badge-float {
+      position: absolute;
+      left: -14px; bottom: 26px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px 16px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .16);
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .cx-badge-float__ic {
+      width: 40px; height: 40px;
+      border-radius: 11px;
+      background: var(--rust-soft);
+      color: var(--rust);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cx-badge-float__ic svg { width: 21px; height: 21px; }
+    .cx-badge-float b { display: block; font-size: 14px; font-weight: 800; color: var(--ink); }
+    .cx-badge-float span { display: block; font-size: 12px; color: #767676; }
+
+    /* ===================== TARJETAS DE CONTACTO ===================== */
+    .cx-methods {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .cx-methods__head {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .cx-methods__head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .cx-methods__head p { color: #767676; margin: 0; font-size: 1.02rem; }
+    .cx-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cx-card {
+      background: var(--cream);
+      border: 1px solid #E8E8E8;
+      border-radius: 20px;
+      padding: 30px 26px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .cx-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .10);
+      border-color: #DADADA;
+    }
+    .cx-card__ic {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--rust-soft);
+      color: var(--rust);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .cx-card__ic svg { width: 27px; height: 27px; }
+    .cx-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--ink); margin: 0 0 6px; }
+    .cx-card p { color: #767676; font-size: .92rem; margin: 0 0 16px; }
+    .cx-card a.cx-link {
+      font-weight: 800;
+      color: var(--rust);
+      font-size: 1.02rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cx-card a.cx-link svg { width: 16px; height: 16px; transition: transform .2s; }
+    .cx-card a.cx-link:hover svg { transform: translateX(3px); }
+
+    /* ===================== FORMULARIO (abajo) ===================== */
+    .cx-form-sec {
+      padding: 10px 0 80px;
+      background: #fff;
+    }
+    .cx-form-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--cream);
+      border: 1px solid #E8E8E8;
+      border-radius: 26px;
+      padding: 44px 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
+    }
+    .cx-form-card__head { text-align: center; margin-bottom: 28px; }
+    .cx-form-card__head h2 {
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .cx-form-card__head p { color: #767676; margin: 0; }
+
+    .cx-form .form-field { margin-bottom: 18px; }
+    .cx-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 7px;
+    }
+    .cx-form input,
+    .cx-form textarea {
+      width: 100%;
+      border: 1.5px solid #E8E8E8;
+      background: #fff;
+      border-radius: 12px;
+      padding: 13px 15px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--ink);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .cx-form input::placeholder,
+    .cx-form textarea::placeholder { color: #A8A8A8; }
+    .cx-form input:focus,
+    .cx-form textarea:focus {
+      outline: none;
+      border-color: var(--rust);
+      box-shadow: 0 0 0 4px rgba(204, 0, 0, .12);
+    }
+    .cx-form textarea { min-height: 130px; resize: vertical; }
+    .cx-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .cx-submit {
+      width: 100%;
+      border: none;
+      background: var(--rust);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 4px;
+    }
+    .cx-submit:hover { background: var(--rust-dark); }
+    .cx-submit:active { transform: scale(.99); }
+    .cx-submit svg { width: 19px; height: 19px; }
+
+    .form-status {
+      text-align: center;
+      margin-top: 14px;
+      font-weight: 600;
+      font-size: 14px;
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+    .form-status svg { width: 18px; height: 18px; }
+
+    /* ===================== responsive ===================== */
+    @media (max-width: 880px) {
+      .cx-hero__grid { grid-template-columns: 1fr; gap: 40px; }
+      .cx-hero__media { order: -1; max-width: 440px; margin: 0 auto; }
+      .cx-cards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+    @media (max-width: 560px) {
+      .cx-hero { padding: 36px 0 46px; }
+      .cx-wa-pill__txt b { font-size: 1.3rem; }
+      .cx-form-card { padding: 32px 22px; border-radius: 20px; }
+      .cx-row { grid-template-columns: 1fr; gap: 0; }
+      .cx-badge-float { left: 8px; }
+    }
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
 
-  <header class="page-hero">
-    <div class="container">
-      <h1>Contáctanos</h1>
-      <p>¿Tienes una duda o quieres hacer un pedido? Escríbenos, te respondemos rápido.</p>
-    </div>
-  </header>
+  <main class="cx">
 
-  <main class="container contact">
-    <div class="contact__info">
-      <h2>Hablemos</h2>
-      <div class="footer__contact">
-        <div class="help__row">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
-          <div><strong>WhatsApp</strong>+51 955 372 605</div>
-        </div>
-        <div class="help__row">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-          <div><strong>Email</strong>contacto@comunik2peru.com</div>
-        </div>
-        <div class="help__row">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <div><strong>Horario</strong>Lun - Sab</div>
+    <!-- HERO -->
+    <section class="cx-hero">
+      <div class="cx-wrap">
+        <div class="cx-hero__grid">
+          <div class="cx-hero__text">
+            <span class="cx-eyebrow">Ergonomía para trabajar mejor</span>
+            <h1>¡Date una experiencia<br><span class="cx-hl">cómoda y productiva!</span></h1>
+            <p class="cx-hero__lead">Contamos con una amplia variedad de <b>sillas ergonómicas</b> y modelos <b>exclusivos</b>. Escríbenos y te asesoramos para elegir la silla perfecta para ti.</p>
+
+            <a class="cx-wa-pill" href="https://wa.me/51985693162?text=Hola,%20quisiera%20asesor%C3%ADa%20para%20elegir%20mi%20silla" target="_blank" rel="noopener">
+              <span class="cx-wa-pill__ic">
+                <svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.414z"/></svg>
+              </span>
+              <span class="cx-wa-pill__txt">
+                <small>Escríbenos ahora</small>
+                <b>985 693 162</b>
+              </span>
+            </a>
+
+            <p class="cx-hero__note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Atención de lunes a sábado · Respuesta rápida
+            </p>
+          </div>
+
+          <div class="cx-hero__media">
+            <img src="../images/productos/gris/use_silla.jpg" alt="Persona trabajando cómoda en una silla ergonómica Siéntate"
+              onerror="this.src='../images/productos/gris/prod1-a.jpeg'">
+            <div class="cx-badge-float">
+              <span class="cx-badge-float__ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+              <div>
+                <b>Garantía 1 año</b>
+                <span>Modelos exclusivos</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <a href="https://wa.me/51955372605" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:18px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg>
-        Escribir por WhatsApp
-      </a>
-    </div>
+    </section>
 
-    <div class="contact__form">
-      <h2>Envíanos un mensaje</h2>
-      <!-- Web3Forms: reemplaza access_key por tu clave de https://web3forms.com -->
-      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
-        <input type="hidden" name="subject" value="Nuevo mensaje desde ComuniK2">
-        <input type="hidden" name="from_name" value="Web ComuniK2">
-        <input type="checkbox" name="botcheck" class="sr-only" style="display:none" aria-hidden="true">
+    <!-- MÉTODOS DE CONTACTO -->
+    <section class="cx-methods">
+      <div class="cx-wrap">
+        <div class="cx-methods__head">
+          <h2>Hablemos</h2>
+          <p>Elige el canal que prefieras. Estamos para ayudarte a encontrar tu silla ideal.</p>
+        </div>
+        <div class="cx-cards">
+          <div class="cx-card">
+            <div class="cx-card__ic">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.255l-.999 3.648 3.978-1.602z"/></svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>La forma más rápida de cotizar y recibir asesoría.</p>
+            <a class="cx-link" href="https://wa.me/51985693162" target="_blank" rel="noopener">985 693 162
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="cx-card">
+            <div class="cx-card__ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 5L2 7"/></svg>
+            </div>
+            <h3>Email</h3>
+            <p>Para consultas, cotizaciones y ventas al por mayor.</p>
+            <a class="cx-link" href="mailto:contacto@comunik2peru.com">Escribir correo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="cx-card">
+            <div class="cx-card__ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Horario</h3>
+            <p>Lunes a sábado, de 9:00 a. m. a 6:00 p. m.</p>
+            <span class="cx-link" style="color:#767676;cursor:default">Atención personalizada</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="form-field">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+    <!-- FORMULARIO (abajo) -->
+    <section class="cx-form-sec">
+      <div class="cx-wrap">
+        <div class="cx-form-card">
+          <div class="cx-form-card__head">
+            <h2>Envíanos un mensaje</h2>
+            <p>Completa el formulario y te responderemos a la brevedad.</p>
+          </div>
+          <!-- Web3Forms: reemplaza access_key por tu clave de https://web3forms.com -->
+          <form id="contact-form" class="cx-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
+            <input type="hidden" name="subject" value="Nuevo mensaje desde Siéntate">
+            <input type="hidden" name="from_name" value="Web Siéntate">
+            <input type="checkbox" name="botcheck" class="sr-only" style="display:none" aria-hidden="true">
+
+            <div class="cx-row">
+              <div class="form-field">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+              </div>
+              <div class="form-field">
+                <label for="phone">Teléfono / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+51 999 999 999">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+            </div>
+            <div class="form-field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" required placeholder="¿En qué podemos ayudarte?"></textarea>
+            </div>
+            <button type="submit" class="cx-submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Enviar mensaje
+            </button>
+            <p class="form-status" id="form-status"></p>
+          </form>
         </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
-        </div>
-        <div class="form-field">
-          <label for="phone">Teléfono / WhatsApp</label>
-          <input type="tel" id="phone" name="phone" placeholder="+51 999 999 999">
-        </div>
-        <div class="form-field">
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" required placeholder="¿En qué podemos ayudarte?"></textarea>
-        </div>
-        <button type="submit" class="btn btn-red btn-block">Enviar mensaje</button>
-        <p class="form-status" id="form-status"></p>
-      </form>
-    </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer"></div>
@@ -96,17 +495,17 @@
           .then(function (res) {
             if (res.success) {
               status.style.color = 'var(--green-wa)';
-              status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ¡Mensaje enviado! Te responderemos pronto.';
+              status.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ¡Mensaje enviado! Te responderemos pronto.';
               form.reset();
             } else {
               status.style.color = 'var(--red)';
-              status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> ';
+              status.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> ';
               status.appendChild(document.createTextNode(res.message || 'No se pudo enviar. Inténtalo de nuevo.'));
             }
           })
           .catch(function () {
             status.style.color = 'var(--red)';
-            status.innerHTML = '<svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Error de conexión. Escríbenos por WhatsApp.';
+            status.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Error de conexión. Escríbenos por WhatsApp.';
           });
       });
     })();
